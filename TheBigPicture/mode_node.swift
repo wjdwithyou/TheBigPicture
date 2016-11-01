@@ -8,17 +8,18 @@
 
 import Foundation
 
-
 class Node {
     var id:Int
     var parent_id:Int
+    var components:Array<Component>
     
     init(id:Int,parent_id:Int) {
         self.id = id
         self.parent_id = parent_id
+        self.components = []
     }
     
-    func addComponent(<#parameters#>) -> Void {
-        
+    func addComponent(element:Component) -> Void {
+        components.append(element)
     }
 }

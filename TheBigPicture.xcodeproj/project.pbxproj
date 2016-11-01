@@ -14,6 +14,7 @@
 		923EF9861DC8687500B22790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923EF9841DC8687500B22790 /* LaunchScreen.storyboard */; };
 		923EF9911DC8687500B22790 /* TheBigPictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EF9901DC8687500B22790 /* TheBigPictureTests.swift */; };
 		F37835261DC86A2600E974CE /* mode_node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835251DC86A2600E974CE /* mode_node.swift */; };
+		F37835281DC86E2200E974CE /* Model_Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835271DC86E2200E974CE /* Model_Component.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		923EF9901DC8687500B22790 /* TheBigPictureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBigPictureTests.swift; sourceTree = "<group>"; };
 		923EF9921DC8687500B22790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F37835251DC86A2600E974CE /* mode_node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mode_node.swift; sourceTree = "<group>"; };
+		F37835271DC86E2200E974CE /* Model_Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Component.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		923EF97A1DC8687500B22790 /* TheBigPicture */ = {
 			isa = PBXGroup;
 			children = (
+				F37835271DC86E2200E974CE /* Model_Component.swift */,
 				923EF97B1DC8687500B22790 /* AppDelegate.swift */,
 				923EF97D1DC8687500B22790 /* ViewController.swift */,
 				923EF97F1DC8687500B22790 /* Main.storyboard */,
@@ -205,6 +208,7 @@
 				F37835261DC86A2600E974CE /* mode_node.swift in Sources */,
 				923EF97E1DC8687500B22790 /* ViewController.swift in Sources */,
 				923EF97C1DC8687500B22790 /* AppDelegate.swift in Sources */,
+				F37835281DC86E2200E974CE /* Model_Component.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
