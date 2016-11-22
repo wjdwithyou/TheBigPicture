@@ -22,4 +22,6 @@ class Node {
     func addComponent(element:Component) -> Void {
         components.append(element)
     }
+    func removeComponent(element:Component) -> Void {
+    }
 }
