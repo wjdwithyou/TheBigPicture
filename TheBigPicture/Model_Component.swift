@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Component{
+class Model_Component{
     let id: Int
     let node_id: Int
     
@@ -18,7 +18,7 @@ class Component{
     }
 }
 
-class Component_Text : Component{
+class Model_Component_Text : Model_Component{
     var text: String
     
     init(id: Int, node_id: Int, text: String){
@@ -28,7 +28,7 @@ class Component_Text : Component{
     }
 }
 
-class Component_Date : Component{
+class Model_Component_Date : Model_Component{
     var date: NSDate
     
     init(id: Int, node_id: Int, date: NSDate){

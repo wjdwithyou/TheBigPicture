@@ -8,20 +8,23 @@
 
 import UIKit
 
-class Ctrl_CascadeView: UIViewController {
+class View_Cascade: UIView {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame:frame)
+    }
+    
+    convenience init () {
+        self.init(frame:CGRect.zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        self.view.backgroundColor = UIColor(white:0.9, alpha: 1);
+        self.backgroundColor = UIColor(white:0.9, alpha: 1);
         
         self.add_button(x:10, y:30)
         self.add_button(x:10, y:60)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func add_button(x:CGFloat, y:CGFloat)
@@ -37,7 +40,7 @@ class Ctrl_CascadeView: UIViewController {
         btn.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
         
         btn.setTitle("Click", for: UIControlState.normal)
-        self.view.addSubview(btn)
+        self.addSubview(btn)
     }
     
     func arrange_cascade(pos:CGPoint, node:Model_Node) -> CGFloat

@@ -7,21 +7,38 @@
 //
 
 import Foundation
+import UIKit
 
-class Node {
+class Model_Node
+{
     var id:Int
     var parent_id:Int
-    var components:Array<Component>
+    var components:Array<Model_Component>
+    var children:Array<Model_Node>
+    var x:CGFloat
+    var y:CGFloat
     
-    init(id:Int,parent_id:Int) {
+    init(id:Int,parent_id:Int)
+    {
         self.id = id
         self.parent_id = parent_id
         self.components = []
+        self.children = []
+        self.x = 0
+        self.y = 0
     }
     
-    func addComponent(element:Component) -> Void {
+    func addChild(child:Model_Node) -> Void
+    {
+        children.append(child)
+    }
+    
+    func addComponent(element:Model_Component) -> Void
+    {
         components.append(element)
     }
-    func removeComponent(element:Component) -> Void {
+    
+    func removeComponent(element:Model_Component) -> Void
+    {
     }
 }
