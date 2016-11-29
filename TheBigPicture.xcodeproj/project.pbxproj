@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		923EF97C1DC8687500B22790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EF97B1DC8687500B22790 /* AppDelegate.swift */; };
-		923EF97E1DC8687500B22790 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EF97D1DC8687500B22790 /* ViewController.swift */; };
+		923EF97E1DC8687500B22790 /* View_Cascade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EF97D1DC8687500B22790 /* View_Cascade.swift */; };
 		923EF9811DC8687500B22790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923EF97F1DC8687500B22790 /* Main.storyboard */; };
 		923EF9831DC8687500B22790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923EF9821DC8687500B22790 /* Assets.xcassets */; };
 		923EF9861DC8687500B22790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923EF9841DC8687500B22790 /* LaunchScreen.storyboard */; };
@@ -16,6 +16,7 @@
 		BD73D96A1DE41A5C00290456 /* CascadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD73D9691DE41A5C00290456 /* CascadeViewController.swift */; };
 		BD73D96C1DE41A9C00290456 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD73D96B1DE41A9C00290456 /* TreeViewController.swift */; };
 		BD73D96E1DE4200F00290456 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD73D96D1DE4200F00290456 /* CalendarViewController.swift */; };
+		929223061DE41A39007A4BF4 /* View_Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929223051DE41A39007A4BF4 /* View_Node.swift */; };
 		F37835261DC86A2600E974CE /* Model_Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835251DC86A2600E974CE /* Model_Node.swift */; };
 		F37835281DC86E2200E974CE /* Model_Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835271DC86E2200E974CE /* Model_Component.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +34,7 @@
 /* Begin PBXFileReference section */
 		923EF9781DC8687500B22790 /* TheBigPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBigPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923EF97B1DC8687500B22790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		923EF97D1DC8687500B22790 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		923EF97D1DC8687500B22790 /* View_Cascade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Cascade.swift; sourceTree = "<group>"; };
 		923EF9801DC8687500B22790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		923EF9821DC8687500B22790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		923EF9851DC8687500B22790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		BD73D9691DE41A5C00290456 /* CascadeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CascadeViewController.swift; sourceTree = "<group>"; };
 		BD73D96B1DE41A9C00290456 /* TreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		BD73D96D1DE4200F00290456 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		929223051DE41A39007A4BF4 /* View_Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_Node.swift; sourceTree = "<group>"; };
 		F37835251DC86A2600E974CE /* Model_Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Node.swift; sourceTree = "<group>"; };
 		F37835271DC86E2200E974CE /* Model_Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Component.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,11 +95,13 @@
 				BD73D9691DE41A5C00290456 /* CascadeViewController.swift */,
 				BD73D96B1DE41A9C00290456 /* TreeViewController.swift */,
 				BD73D96D1DE4200F00290456 /* CalendarViewController.swift */,
+				923EF97D1DC8687500B22790 /* View_Cascade.swift */,
 				923EF97F1DC8687500B22790 /* Main.storyboard */,
 				923EF9821DC8687500B22790 /* Assets.xcassets */,
 				923EF9841DC8687500B22790 /* LaunchScreen.storyboard */,
 				923EF9871DC8687500B22790 /* Info.plist */,
 				F37835251DC86A2600E974CE /* Model_Node.swift */,
+				929223051DE41A39007A4BF4 /* View_Node.swift */,
 			);
 			path = TheBigPicture;
 			sourceTree = "<group>";
@@ -215,12 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37835261DC86A2600E974CE /* Model_Node.swift in Sources */,
-				923EF97E1DC8687500B22790 /* ViewController.swift in Sources */,
+				923EF97E1DC8687500B22790 /* View_Cascade.swift in Sources */,
 				923EF97C1DC8687500B22790 /* AppDelegate.swift in Sources */,
 				F37835281DC86E2200E974CE /* Model_Component.swift in Sources */,
 				BD73D96C1DE41A9C00290456 /* TreeViewController.swift in Sources */,
 				BD73D96E1DE4200F00290456 /* CalendarViewController.swift in Sources */,
 				BD73D96A1DE41A5C00290456 /* CascadeViewController.swift in Sources */,
+				929223061DE41A39007A4BF4 /* View_Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
