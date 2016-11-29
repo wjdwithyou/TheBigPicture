@@ -23,8 +23,8 @@ class View_Cascade: UIView {
         
         self.backgroundColor = UIColor(white:0.9, alpha: 1);
         
-        self.add_button(x:10, y:30)
-        self.add_button(x:10, y:60)
+        self.add_button(10, y:30)
+        self.add_button(10, y:60)
     }
     
     func add_button(x:CGFloat, y:CGFloat)
@@ -39,7 +39,7 @@ class View_Cascade: UIView {
         
         btn.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
         
-        btn.setTitle("Click", for: UIControlState.normal)
+        btn.setTitle("Click", forState: UIControlState.Normal)
         self.addSubview(btn)
     }
     
@@ -56,7 +56,7 @@ class View_Cascade: UIView {
             child_pos.x = pos.x + stride_x
             child_pos.y = pos.y + child_y
             
-            child_y += self.arrange_cascade(pos:child_pos, node:child)
+            child_y += self.arrange_cascade(child_pos, node:child)
         }
         
         node.x = pos.x
