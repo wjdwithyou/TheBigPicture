@@ -8,9 +8,9 @@
 
 import UIKit
 
-class View_Cascade: UIView {
+class View_MindMap: UIView {
     var node_container:Model_NodeContainer
-
+    
     override init(frame: CGRect) {
         self.node_container = Model_NodeContainer()
         super.init(frame:frame)
@@ -27,16 +27,20 @@ class View_Cascade: UIView {
     {
         self.backgroundColor = UIColor(white:0.9, alpha: 1)
         
-        self.add_button(x:20, y:30,  text:"한양대학교")
-        self.add_button(x:60, y:80,  text:"데이터베이스")
-        self.add_button(x:100, y:130,  text:"과제")
-        self.add_button(x:140, y:180, text:"데이터베이스 생성")
-        self.add_button(x:140, y:230, text:"쿼리문 작성")
-        self.add_button(x:60, y:280, text:"인공지능")
-        self.add_button(x:100, y:330, text:"시험")
-        self.add_button(x:60, y:380, text:"융합소프트웨어프로젝트")
-        self.add_button(x:100, y:430, text:"과제")
-        self.add_button(x:140, y:480, text:"동영상촬영")
+        self.add_button(x:10, y:320,  text:"한양대학교")
+        
+        self.add_button(x:120, y:240, text:"데이터베이스")
+        self.add_button(x:120, y:340, text:"인공지능")
+        self.add_button(x:120, y:410, text:"융합소프트웨어프로젝트")
+        
+        self.add_button(x:230, y:240,  text:"과제")
+        self.add_button(x:340, y:220, text:"데이터베이스 생성")
+        self.add_button(x:340, y:260, text:"쿼리문 작성")
+
+        self.add_button(x:230, y:340, text:"시험")
+
+        self.add_button(x:230, y:410, text:"과제")
+        self.add_button(x:340, y:410, text:"동영상촬영")
     }
     
     func add_button(x:CGFloat, y:CGFloat, text:String)
@@ -45,9 +49,9 @@ class View_Cascade: UIView {
         
         btn.frame.origin.x = x
         btn.frame.origin.y = y
-        btn.frame.size.width = 200
-        btn.frame.size.height = 40
-        btn.layer.cornerRadius = 10
+        btn.frame.size.width = 100
+        btn.frame.size.height = 20
+        btn.layer.cornerRadius = 5
         
         btn.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
         
@@ -73,10 +77,10 @@ class View_Cascade: UIView {
         
         node.x = pos.x
         node.y = pos.y
-    
+        
         return child_y
     }
-
-
+    
+    
 }
 
