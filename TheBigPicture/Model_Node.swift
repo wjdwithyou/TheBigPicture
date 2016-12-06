@@ -42,3 +42,27 @@ class Model_Node
     {
     }
 }
+
+class Model_NodeContainer
+{
+    var map_node:[Int:Model_Node]
+    var root_node:Model_Node?
+    
+    init()
+    {
+        self.map_node = [:]
+        self.root_node = nil
+    }
+    
+    func create_node(node_id:Int, parent_id:Int)
+    {
+        let node = Model_Node(id:node_id, parent_id:parent_id)
+    
+        if parent_id == -1
+        {
+            self.root_node = node
+        }
+    
+        self.map_node[node_id] = node;
+    }
+}
