@@ -14,7 +14,9 @@
 		923EF9861DC8687500B22790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923EF9841DC8687500B22790 /* LaunchScreen.storyboard */; };
 		923EF9911DC8687500B22790 /* TheBigPictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EF9901DC8687500B22790 /* TheBigPictureTests.swift */; };
 		92558B3B1DEF09F700FA7CB3 /* View_MindMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92558B3A1DEF09F700FA7CB3 /* View_MindMap.swift */; };
-		929223061DE41A39007A4BF4 /* View_Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929223051DE41A39007A4BF4 /* View_Node.swift */; };
+		929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929223051DE41A39007A4BF4 /* View_CascadeNode.swift */; };
+		92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92251DF54389004C92C6 /* View_MindMapNode.swift */; };
+		92EA92281DF5DBFB004C92C6 /* View_MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92271DF5DBFB004C92C6 /* View_MainController.swift */; };
 		F37835261DC86A2600E974CE /* Model_Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835251DC86A2600E974CE /* Model_Node.swift */; };
 		F37835281DC86E2200E974CE /* Model_Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835271DC86E2200E974CE /* Model_Component.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +43,9 @@
 		923EF9901DC8687500B22790 /* TheBigPictureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBigPictureTests.swift; sourceTree = "<group>"; };
 		923EF9921DC8687500B22790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92558B3A1DEF09F700FA7CB3 /* View_MindMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MindMap.swift; sourceTree = "<group>"; };
-		929223051DE41A39007A4BF4 /* View_Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_Node.swift; sourceTree = "<group>"; };
+		929223051DE41A39007A4BF4 /* View_CascadeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_CascadeNode.swift; sourceTree = "<group>"; };
+		92EA92251DF54389004C92C6 /* View_MindMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MindMapNode.swift; sourceTree = "<group>"; };
+		92EA92271DF5DBFB004C92C6 /* View_MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MainController.swift; sourceTree = "<group>"; };
 		F37835251DC86A2600E974CE /* Model_Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Node.swift; sourceTree = "<group>"; };
 		F37835271DC86E2200E974CE /* Model_Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Component.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +93,9 @@
 				F37835251DC86A2600E974CE /* Model_Node.swift */,
 				923EF97D1DC8687500B22790 /* View_Cascade.swift */,
 				92558B3A1DEF09F700FA7CB3 /* View_MindMap.swift */,
-				929223051DE41A39007A4BF4 /* View_Node.swift */,
+				929223051DE41A39007A4BF4 /* View_CascadeNode.swift */,
+				92EA92251DF54389004C92C6 /* View_MindMapNode.swift */,
+				92EA92271DF5DBFB004C92C6 /* View_MainController.swift */,
 				923EF97B1DC8687500B22790 /* AppDelegate.swift */,
 				923EF97F1DC8687500B22790 /* Main.storyboard */,
 				923EF9821DC8687500B22790 /* Assets.xcassets */,
@@ -216,7 +222,9 @@
 				923EF97E1DC8687500B22790 /* View_Cascade.swift in Sources */,
 				923EF97C1DC8687500B22790 /* AppDelegate.swift in Sources */,
 				F37835281DC86E2200E974CE /* Model_Component.swift in Sources */,
-				929223061DE41A39007A4BF4 /* View_Node.swift in Sources */,
+				92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */,
+				929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */,
+				92EA92281DF5DBFB004C92C6 /* View_MainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
