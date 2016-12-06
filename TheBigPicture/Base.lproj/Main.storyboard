@@ -69,12 +69,13 @@
             </objects>
             <point key="canvasLocation" x="3322" y="138"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--View Main Controller-->
         <scene sceneID="gL3-Ho-8I1">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kHX-az-MY1" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kHX-az-MY1" customClass="View_MainController" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Xgy-x0-j3V">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -115,7 +116,7 @@
                         <viewControllerLayoutGuide type="top" id="sHH-Ed-oIT"/>
                         <viewControllerLayoutGuide type="bottom" id="4PQ-Py-JAl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jIu-D2-ngR">
+                    <view key="view" contentMode="scaleToFill" id="jIu-D2-ngR" customClass="View_MindMap" customModule="TheBigPicture" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.89912856949700248" alpha="1" colorSpace="calibratedWhite"/>

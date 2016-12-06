@@ -8,46 +8,58 @@
 
 import UIKit
 
-class View_Cascade: UIView {
-
-    override init(frame: CGRect) {
-        super.init(frame:frame)
-    }
+class View_Cascade: UIView
+{
+    var map_view_node:[Int:View_CascadeNode]
     
-    convenience init () {
-        self.init(frame:CGRect.zero)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.backgroundColor = UIColor(white:0.9, alpha: 1);
-        
-        self.add_button(10, y:30)
-        self.add_button(10, y:60)
-    }
-    
-    func add_button(x:CGFloat, y:CGFloat)
+    override init(frame: CGRect)
     {
-        let btn = UIButton()
+        self.map_view_node = [:]
+        super.init(frame:frame)
+        self.initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        self.map_view_node = [:]
+        super.init(coder: aDecoder)
+        self.initialize()
+    }
+    
+    func initialize()
+    {
+        self.backgroundColor = UIColor(white:0.9, alpha: 1)
         
-        btn.frame.origin.x = x
-        btn.frame.origin.y = y
-        btn.frame.size.width = 100
-        btn.frame.size.height = 20
-        btn.layer.cornerRadius = 5
+        self.render()
+    }
+    
+    func render()
+    {
+        self.arrange_cascade(CGPoint(x:10, y:30), node: s_node_container.root_node!)
         
-        btn.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
-        
-        btn.setTitle("Click", forState: UIControlState.Normal)
-        self.addSubview(btn)
+        for node in s_node_container.map_node
+        {
+            if self.map_view_node[node.1.id] == nil
+            {
+                let new_view_node = View_CascadeNode(model:node.1)
+                
+                self.map_view_node[node.1.id] = new_view_node
+                self.addSubview(new_view_node.button)
+            }
+            else
+            {
+                self.map_view_node[node.1.id]?.model = node.1
+            }
+            
+            self.map_view_node[node.1.id]?.render()
+        }
     }
     
     func arrange_cascade(pos:CGPoint, node:Model_Node) -> CGFloat
     {
-        let stride_x:CGFloat = 100
-        let node_height:CGFloat = 20
-        var child_y:CGFloat = node_height + 5
+        let stride_x:CGFloat = 50
+        let node_height:CGFloat = 40
+        var child_y:CGFloat = node_height + 10
         
         for child in node.children
         {
@@ -56,7 +68,7 @@ class View_Cascade: UIView {
             child_pos.x = pos.x + stride_x
             child_pos.y = pos.y + child_y
             
-            child_y += self.arrange_cascade(child_pos, node:child)
+            child_y += self.arrange_cascade(child_pos, node:s_node_container.get_node(child.id))
         }
         
         node.x = pos.x
