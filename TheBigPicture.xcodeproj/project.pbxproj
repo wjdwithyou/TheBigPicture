@@ -17,6 +17,7 @@
 		929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929223051DE41A39007A4BF4 /* View_CascadeNode.swift */; };
 		92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92251DF54389004C92C6 /* View_MindMapNode.swift */; };
 		92EA92281DF5DBFB004C92C6 /* View_MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92271DF5DBFB004C92C6 /* View_MainController.swift */; };
+		9B8E56EA33938DFB1DA57C1E /* Pods_TheBigPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D30EC4DB3099C5CF488229 /* Pods_TheBigPicture.framework */; };
 		F37835261DC86A2600E974CE /* Model_Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835251DC86A2600E974CE /* Model_Node.swift */; };
 		F37835281DC86E2200E974CE /* Model_Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835271DC86E2200E974CE /* Model_Component.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51D30EC4DB3099C5CF488229 /* Pods_TheBigPicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBigPicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		923EF9781DC8687500B22790 /* TheBigPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBigPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923EF97B1DC8687500B22790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923EF97D1DC8687500B22790 /* View_Cascade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Cascade.swift; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		929223051DE41A39007A4BF4 /* View_CascadeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_CascadeNode.swift; sourceTree = "<group>"; };
 		92EA92251DF54389004C92C6 /* View_MindMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MindMapNode.swift; sourceTree = "<group>"; };
 		92EA92271DF5DBFB004C92C6 /* View_MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MainController.swift; sourceTree = "<group>"; };
+		A5E5DF02A3C64C6DAD40B22C /* Pods-TheBigPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBigPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture.release.xcconfig"; sourceTree = "<group>"; };
+		C655A363C1C37D7614FC8C59 /* Pods-TheBigPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBigPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture.debug.xcconfig"; sourceTree = "<group>"; };
 		F37835251DC86A2600E974CE /* Model_Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Node.swift; sourceTree = "<group>"; };
 		F37835271DC86E2200E974CE /* Model_Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Component.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8E56EA33938DFB1DA57C1E /* Pods_TheBigPicture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01DD48E08C34C19DAC95A8EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51D30EC4DB3099C5CF488229 /* Pods_TheBigPicture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		923EF96F1DC8687500B22790 = {
 			isa = PBXGroup;
 			children = (
 				923EF97A1DC8687500B22790 /* TheBigPicture */,
 				923EF98F1DC8687500B22790 /* TheBigPictureTests */,
 				923EF9791DC8687500B22790 /* Products */,
+				D5B4A0D68F0CC4BAE573AC8D /* Pods */,
+				01DD48E08C34C19DAC95A8EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +129,15 @@
 			path = TheBigPictureTests;
 			sourceTree = "<group>";
 		};
+		D5B4A0D68F0CC4BAE573AC8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C655A363C1C37D7614FC8C59 /* Pods-TheBigPicture.debug.xcconfig */,
+				A5E5DF02A3C64C6DAD40B22C /* Pods-TheBigPicture.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 923EF9951DC8687500B22790 /* Build configuration list for PBXNativeTarget "TheBigPicture" */;
 			buildPhases = (
+				C2515E81AB72448817B789D4 /* [CP] Check Pods Manifest.lock */,
 				923EF9741DC8687500B22790 /* Sources */,
 				923EF9751DC8687500B22790 /* Frameworks */,
 				923EF9761DC8687500B22790 /* Resources */,
+				7AF814443DB55023A1160D39 /* [CP] Embed Pods Frameworks */,
+				2A8CC9C8EBD9111722FD0757 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,6 +238,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A8CC9C8EBD9111722FD0757 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AF814443DB55023A1160D39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2515E81AB72448817B789D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		923EF9741DC8687500B22790 /* Sources */ = {
@@ -361,6 +436,7 @@
 		};
 		923EF9961DC8687500B22790 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C655A363C1C37D7614FC8C59 /* Pods-TheBigPicture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheBigPicture/Info.plist;
@@ -374,6 +450,7 @@
 		};
 		923EF9971DC8687500B22790 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5E5DF02A3C64C6DAD40B22C /* Pods-TheBigPicture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheBigPicture/Info.plist;
