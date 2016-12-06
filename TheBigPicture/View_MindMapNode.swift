@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class View_Node
+class View_MindMapNode
 {
     var model:Model_Node
     var button:UIButton
@@ -24,13 +24,25 @@ class View_Node
         self.button.frame.size.height = 20
         self.button.layer.cornerRadius = 5
         
+        self.button.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
+        
         self.render()
     }
     
     func render()
     {
+        var name:String = ""
+        
+        for comp in model.components
+        {
+            if let comp_name = comp as? Model_Component_Name
+            {
+                name = comp_name.name
+            }
+        }
+        
         self.button.frame.origin.x = self.model.x
         self.button.frame.origin.y = self.model.y
-        self.button.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
+        self.button.setTitle(name, forState: UIControlState.Normal)
     }
 }

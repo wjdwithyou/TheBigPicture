@@ -9,16 +9,12 @@
 import UIKit
 
 class View_MindMap: UIView {
-    var node_container:Model_NodeContainer
-    
     override init(frame: CGRect) {
-        self.node_container = Model_NodeContainer()
         super.init(frame:frame)
         self.initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.node_container = Model_NodeContainer()
         super.init(coder: aDecoder)
         self.initialize()
     }
