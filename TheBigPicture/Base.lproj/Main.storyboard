@@ -125,7 +125,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.90454995632171631" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cascade" id="Mol-Z5-kSh"/>
+                    <tabBarItem key="tabBarItem" title="Cascade" image="cascade" id="Mol-Z5-kSh"/>
                     <connections>
                         <outlet property="scroll_view" destination="zA8-6V-IgA" id="Fon-fc-mKe"/>
                     </connections>
@@ -159,7 +159,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.89912856949700248" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MindMap" id="tdY-XD-MHO"/>
+                    <tabBarItem key="tabBarItem" title="MindMap" image="mindmap" id="tdY-XD-MHO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brM-0D-nUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +195,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.89909874068366158" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" id="Q6i-dB-l4d"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="Q6i-dB-l4d"/>
                     <connections>
                         <outlet property="calendarView" destination="MQp-0s-n63" id="8zE-OK-RpC"/>
                     </connections>
@@ -205,5 +205,10 @@
             <point key="canvasLocation" x="2572" y="1153.6731634182909"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" width="16" height="16"/>
+        <image name="cascade" width="16" height="16"/>
+        <image name="mindmap" width="16" height="16"/>
+    </resources>
     <color key="tintColor" red="0.94678468230566348" green="0.95615878807106602" blue="0.95615878807106602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
