@@ -8,35 +8,36 @@
 
 import UIKit
 
-class View_MindMap: UIView {
-    override init(frame: CGRect) {
-        super.init(frame:frame)
-        self.initialize()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.initialize()
-    }
-    
-    func initialize()
+class Controller_MindMap: UIViewController
+{
+    required init?(coder aDecoder: NSCoder)
     {
-        self.backgroundColor = UIColor(white:0.9, alpha: 1)
-        
-        self.add_button(10, y:320,  text:"한양대학교")
+        super.init(coder: aDecoder)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        return .lightContent
+    }
+    
+    override func viewDidLoad()
+    {
+        self.view.backgroundColor = UIColor(white:0.9, alpha: 1)
+
+        self.add_button(x:10, y:320,  text:"한양대학교")
         
         self.add_button(120, y:240, text:"데이터베이스")
         self.add_button(120, y:340, text:"인공지능")
         self.add_button(120, y:410, text:"융합소프트웨어프로젝트")
         
-        self.add_button(230, y:240,  text:"과제")
-        self.add_button(340, y:220, text:"데이터베이스 생성")
-        self.add_button(340, y:260, text:"쿼리문 작성")
-
-        self.add_button(230, y:340, text:"시험")
-
-        self.add_button(230, y:410, text:"과제")
-        self.add_button(340, y:410, text:"동영상촬영")
+        self.add_button(x:230, y:240,  text:"과제")
+        self.add_button(x:340, y:220, text:"데이터베이스 생성")
+        self.add_button(x:340, y:260, text:"쿼리문 작성")
+        
+        self.add_button(x:230, y:340, text:"시험")
+        
+        self.add_button(x:230, y:410, text:"과제")
+        self.add_button(x:340, y:410, text:"동영상촬영")
     }
     
     func add_button(x:CGFloat, y:CGFloat, text:String)
@@ -51,8 +52,8 @@ class View_MindMap: UIView {
         
         btn.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
         
-        btn.setTitle(text, forState: UIControlState.Normal)
-        self.addSubview(btn)
+        btn.setTitle(text, for: UIControlState.normal)
+        self.view.addSubview(btn)
     }
     
     func arrange_cascade(pos:CGPoint, node:Model_Node) -> CGFloat
