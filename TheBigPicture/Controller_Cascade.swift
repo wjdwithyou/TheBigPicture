@@ -8,34 +8,39 @@
 
 import UIKit
 
-class View_Cascade: UIView
+class Controller_Cascade: UIViewController
 {
     var map_view_node:[Int:View_CascadeNode]
     
-    override init(frame: CGRect)
-    {
-        self.map_view_node = [:]
-        super.init(frame:frame)
-        self.initialize()
-    }
+    @IBOutlet weak var scroll_view: UIScrollView!
     
     required init?(coder aDecoder: NSCoder)
     {
         self.map_view_node = [:]
+        
         super.init(coder: aDecoder)
-        self.initialize()
     }
     
-    func initialize()
+    override var preferredStatusBarStyle: UIStatusBarStyle
     {
-        self.backgroundColor = UIColor(white:0.9, alpha: 1)
+        return .lightContent
+    }
+    
+    override func viewDidLoad()
+    {
+        self.view.backgroundColor = UIColor(white:0.9, alpha: 1)
+        
+        self.scroll_view.frame.size.width = self.view.frame.width
+        self.scroll_view.frame.size.height = self.view.frame.height
         
         self.render()
     }
     
     func render()
     {
-        self.arrange_cascade(CGPoint(x:10, y:30), node: s_node_container.root_node!)
+        let content_height = self.arrange_cascade(pos: CGPoint(x:10, y:10), node: s_node_container.root_node!)
+        
+        self.scroll_view.contentSize.height = content_height
         
         for node in s_node_container.map_node
         {
@@ -43,8 +48,8 @@ class View_Cascade: UIView
             {
                 let new_view_node = View_CascadeNode(model:node.1)
                 
-                self.map_view_node[node.1.id] = new_view_node
-                self.addSubview(new_view_node.button)
+                self.map_view_node[node.value.id] = new_view_node
+                self.scroll_view.addSubview(new_view_node.button)
             }
             else
             {

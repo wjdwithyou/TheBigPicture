@@ -74,10 +74,10 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kHX-az-MY1" customClass="View_MainController" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Xgy-x0-j3V">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Xgy-x0-j3V">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9El-nA-X2f" kind="relationship" relationship="viewControllers" id="deh-YW-co1"/>
@@ -92,36 +92,67 @@
         <!--Cascade-->
         <scene sceneID="zYZ-PS-6gI">
             <objects>
-                <viewController id="9El-nA-X2f" customClass="CascadeViewController" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9El-nA-X2f" customClass="Controller_Cascade" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xm-aH-gn0"/>
                         <viewControllerLayoutGuide type="bottom" id="Ey4-SS-XDg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MJg-7L-Wb8" customClass="View_Cascade" customModule="TheBigPicture" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="MJg-7L-Wb8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.90454996294445467" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zA8-6V-IgA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dm-Pc-rKl">
+                                <rect key="frame" x="0.0" y="-10" width="375" height="74"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.28627450980392155" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Cascade" prompt=" " id="anE-ye-j5R"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.90454995632171631" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cascade" id="Mol-Z5-kSh"/>
+                    <connections>
+                        <outlet property="scroll_view" destination="zA8-6V-IgA" id="Fon-fc-mKe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xW5-J4-EGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="1154"/>
+            <point key="canvasLocation" x="1021.6" y="1153.6731634182909"/>
         </scene>
-        <!--Tree-->
+        <!--MindMap-->
         <scene sceneID="wBh-mP-oEK">
             <objects>
-                <viewController id="g3i-lJ-QEY" customClass="TreeViewController" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g3i-lJ-QEY" customClass="Controller_MindMap" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sHH-Ed-oIT"/>
                         <viewControllerLayoutGuide type="bottom" id="4PQ-Py-JAl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jIu-D2-ngR" customClass="View_MindMap" customModule="TheBigPicture" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="jIu-D2-ngR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INE-g6-r3y">
+                                <rect key="frame" x="0.0" y="-10" width="375" height="74"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="MindMap" prompt=" " id="web-g2-5pp"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="0.89912856949700248" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tree" id="tdY-XD-MHO"/>
+                    <tabBarItem key="tabBarItem" title="MindMap" id="tdY-XD-MHO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brM-0D-nUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,14 +161,26 @@
         <!--Calendar-->
         <scene sceneID="n11-b9-gGp">
             <objects>
-                <viewController id="596-Qi-M33" customClass="CalendarViewController" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="596-Qi-M33" customClass="Controller_Calendar" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y38-2X-OdK"/>
                         <viewControllerLayoutGuide type="bottom" id="5k5-sW-mqt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hau-R6-Llh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpS-UY-3t4">
+                                <rect key="frame" x="0.0" y="-10" width="375" height="74"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.2156862745" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Calendar" prompt=" " id="QcA-5R-xac"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="0.89909874068366158" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" id="Q6i-dB-l4d"/>
