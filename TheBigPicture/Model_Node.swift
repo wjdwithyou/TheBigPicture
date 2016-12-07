@@ -89,13 +89,7 @@ var test_nodes = [
     Model_Node(id:42,   parent_id:4),
     Model_Node(id:5,    parent_id:1),
     Model_Node(id:6,    parent_id:1),
-    Model_Node(id:7,    parent_id:1),
-    Model_Node(id:8,    parent_id:1),
-    Model_Node(id:9,    parent_id:1),
-    Model_Node(id:10,    parent_id:1),
-    Model_Node(id:11,    parent_id:1),
-    Model_Node(id:12,    parent_id:1),
-    Model_Node(id:13,    parent_id:1)
+    Model_Node(id:7,    parent_id:1)
 ]
 
 var test_components_name = [

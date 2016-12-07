@@ -20,9 +20,9 @@ class View_MindMapNode
         
         self.button = UIButton()
         
-        self.button.frame.size.width = 200
-        self.button.frame.size.height = 40
-        self.button.layer.cornerRadius = 10
+        self.button.frame.size.width = 150
+        self.button.frame.size.height = 30
+        self.button.layer.cornerRadius = 20/3
         
         self.button.backgroundColor = UIColor(red:91/255, green:118/255, blue:136/255, alpha: 1)
         

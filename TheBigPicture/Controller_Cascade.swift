@@ -31,7 +31,13 @@ class Controller_Cascade: UIViewController
         self.view.backgroundColor = UIColor(white:0.9, alpha: 1)
         
         self.scroll_view.frame.size.width = self.view.frame.width
-        self.scroll_view.frame.size.height = self.view.frame.height
+        self.scroll_view.frame.size.height = self.view.frame.height - 40 - 74
+        
+        let fab = KCFloatingActionButton()
+        fab.addItem(title: "Edit")
+        fab.addItem(title: "Delete")
+        fab.addItem(title: "New")
+        self.view.addSubview(fab)
         
         self.render()
     }
@@ -40,7 +46,7 @@ class Controller_Cascade: UIViewController
     {
         let content_height = self.arrange_cascade(pos: CGPoint(x:10, y:10), node: s_node_container.root_node!)
         
-        self.scroll_view.contentSize.height = content_height
+        self.scroll_view.contentSize.height = content_height + 10
         
         for node in s_node_container.map_node
         {

@@ -10,8 +10,14 @@ import UIKit
 
 class Controller_MindMap: UIViewController
 {
+    var map_view_node:[Int:View_MindMapNode]
+    
+    @IBOutlet weak var scroll_view: UIScrollView!
+    
     required init?(coder aDecoder: NSCoder)
     {
+        self.map_view_node = [:]
+        
         super.init(coder: aDecoder)
     }
     
@@ -23,44 +29,43 @@ class Controller_MindMap: UIViewController
     override func viewDidLoad()
     {
         self.view.backgroundColor = UIColor(white:0.9, alpha: 1)
-
-        self.add_button(x:10, y:320,  text:"한양대학교")
         
-        self.add_button(x:120, y:240, text:"데이터베이스")
-        self.add_button(x:120, y:340, text:"인공지능")
-        self.add_button(x:120, y:410, text:"융합소프트웨어프로젝트")
+        self.scroll_view.frame.size.width = self.view.frame.width
+        self.scroll_view.frame.size.height = self.view.frame.height - 40 - 74
         
-        self.add_button(x:230, y:240,  text:"과제")
-        self.add_button(x:340, y:220, text:"데이터베이스 생성")
-        self.add_button(x:340, y:260, text:"쿼리문 작성")
-        
-        self.add_button(x:230, y:340, text:"시험")
-        
-        self.add_button(x:230, y:410, text:"과제")
-        self.add_button(x:340, y:410, text:"동영상촬영")
+        self.render()
     }
     
-    func add_button(x:CGFloat, y:CGFloat, text:String)
+    func render()
     {
-        let btn = UIButton()
+        let content_height = self.arrange_spread(pos: CGPoint(x:10, y:10), node: s_node_container.root_node!)
         
-        btn.frame.origin.x = x
-        btn.frame.origin.y = y
-        btn.frame.size.width = 100
-        btn.frame.size.height = 20
-        btn.layer.cornerRadius = 5
+        self.scroll_view.contentSize.height = content_height + 10
+        self.scroll_view.contentSize.width = 10000
         
-        btn.backgroundColor = UIColor(red: 0.21, green: 0.37, blue: 0.45, alpha: 1)
-        
-        btn.setTitle(text, for: UIControlState.normal)
-        self.view.addSubview(btn)
+        for node in s_node_container.map_node
+        {
+            if self.map_view_node[node.value.id] == nil
+            {
+                let new_view_node = View_MindMapNode(model:node.value)
+                
+                self.map_view_node[node.value.id] = new_view_node
+                self.scroll_view.addSubview(new_view_node.button)
+            }
+            else
+            {
+                self.map_view_node[node.value.id]?.model = node.value
+            }
+            
+            self.map_view_node[node.value.id]?.render()
+        }
     }
     
-    func arrange_cascade(pos:CGPoint, node:Model_Node) -> CGFloat
+    func arrange_spread(pos:CGPoint, node:Model_Node) -> CGFloat
     {
-        let stride_x:CGFloat = 100
-        let node_height:CGFloat = 20
-        var child_y:CGFloat = node_height + 5
+        let stride_x:CGFloat = 150 + 20
+        let node_height:CGFloat = 30
+        var child_y:CGFloat = node.children.count > 0 ? 0 : node_height + 15
         
         for child in node.children
         {
@@ -69,15 +74,14 @@ class Controller_MindMap: UIViewController
             child_pos.x = pos.x + stride_x
             child_pos.y = pos.y + child_y
             
-            child_y += self.arrange_cascade(pos:child_pos, node:child)
+            child_y += self.arrange_spread(pos:child_pos, node:s_node_container.get_node(node_id:child.id))
         }
         
         node.x = pos.x
-        node.y = pos.y
+        node.y = pos.y + (child_y - node_height)/2
         
         return child_y
     }
-    
     
 }
 
