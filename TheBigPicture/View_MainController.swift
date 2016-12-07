@@ -17,4 +17,8 @@ class View_MainController: UITabBarController {
     {
         initialize_test_data()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

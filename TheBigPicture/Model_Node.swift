@@ -89,7 +89,13 @@ var test_nodes = [
     Model_Node(id:42,   parent_id:4),
     Model_Node(id:5,    parent_id:1),
     Model_Node(id:6,    parent_id:1),
-    Model_Node(id:7,    parent_id:1)
+    Model_Node(id:7,    parent_id:1),
+    Model_Node(id:8,    parent_id:1),
+    Model_Node(id:9,    parent_id:1),
+    Model_Node(id:10,    parent_id:1),
+    Model_Node(id:11,    parent_id:1),
+    Model_Node(id:12,    parent_id:1),
+    Model_Node(id:13,    parent_id:1)
 ]
 
 var test_components_name = [
@@ -107,6 +113,7 @@ var test_components_name = [
     Model_Component_Name(id:12, node_id:6, name:"테스트"),
     Model_Component_Name(id:13, node_id:7, name:"테스트")
 ]
+
 
 func initialize_test_data()
 {
