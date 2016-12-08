@@ -33,6 +33,12 @@ class Controller_MindMap: UIViewController
         self.scroll_view.frame.size.width = self.view.frame.width
         self.scroll_view.frame.size.height = self.view.frame.height - 40 - 74
         
+        let fab = KCFloatingActionButton()
+        fab.addItem(title: "Edit")
+        fab.addItem(title: "Delete")
+        fab.addItem(title: "New")
+        self.view.addSubview(fab)
+        
         self.render()
     }
     

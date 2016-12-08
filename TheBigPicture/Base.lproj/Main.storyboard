@@ -91,8 +91,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="9El-nA-X2f" kind="relationship" relationship="viewControllers" id="deh-YW-co1"/>
-                        <segue destination="596-Qi-M33" kind="relationship" relationship="viewControllers" id="M3u-7D-dop"/>
                         <segue destination="g3i-lJ-QEY" kind="relationship" relationship="viewControllers" id="0aG-KW-wB4"/>
+                        <segue destination="596-Qi-M33" kind="relationship" relationship="viewControllers" id="M3u-7D-dop"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxq-lb-xeU" userLabel="First Responder" sceneMemberID="firstResponder"/>
