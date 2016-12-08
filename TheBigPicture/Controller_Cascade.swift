@@ -54,6 +54,8 @@ class Controller_Cascade: UIViewController
             {
                 let new_view_node = View_CascadeNode(model:node.value)
                 
+                new_view_node.button.addTarget(self, action: #selector(self.pressed(sender:)), for: .touchUpInside)
+                
                 self.map_view_node[node.value.id] = new_view_node
                 self.scroll_view.addSubview(new_view_node.button)
             }
@@ -79,7 +81,7 @@ class Controller_Cascade: UIViewController
             child_pos.x = pos.x + stride_x
             child_pos.y = pos.y + child_y
             
-            child_y += self.arrange_cascade(pos:child_pos, node:s_node_container.get_node(node_id:child.id))
+            child_y += self.arrange_cascade(pos: child_pos, node:s_node_container.get_node(node_id: child.id))
         }
         
         node.x = pos.x
@@ -87,7 +89,31 @@ class Controller_Cascade: UIViewController
     
         return child_y
     }
-
-
+    
+    func pressed(sender: UIButton!){
+        //print("\(sender.titleLabel!.text!)")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! Controller_Detail
+        
+        vc.receivedText = String(describing: sender.titleLabel!.text!)
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CascadeSegue" {
+            if let destination = segue.destination as? Controller_Detail {
+                destination.receivedText = "seguePassTest";
+            }
+        }
+    }
+    */
+    
+    @IBAction func unwindToPrev(segue:UIStoryboardSegue){
+        //print("unwindToCascade")
+    }
 }
 
