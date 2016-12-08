@@ -43,6 +43,6 @@ class View_CascadeNode
         
         self.button.frame.origin.x = self.model.x
         self.button.frame.origin.y = self.model.y
-        self.button.setTitle(name, forState: UIControlState.Normal)
+        self.button.setTitle(name, for: UIControlState.normal)
     }
 }

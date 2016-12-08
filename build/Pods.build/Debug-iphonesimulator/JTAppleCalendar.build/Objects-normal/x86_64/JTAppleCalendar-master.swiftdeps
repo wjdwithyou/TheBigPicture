@@ -1,0 +1,19 @@
+version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
+options: "d8efe9b371aa7b8abc8431b693d696b6"
+build_time: [534439972, 105400000]
+inputs:
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/CalendarEnums.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/CalendarStructs.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/GlobalFunctionsAndExtensions.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleCalendarDelegateProtocol.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleCalendarLayout.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleCalendarLayoutProtocol.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleCalendarView.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleCollectionReusableView.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleDayCell.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleReusableViewProtocol.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTAppleViews.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/JTCalendarProtocols.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/UICollectionViewDelegates.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/UIScrollViewDelegates.swift": [534439903, 0]
+  "/Users/J.Style/Desktop/TheBigPicture/Pods/JTAppleCalendar/Sources/UserInteractionFunctions.swift": [534439903, 0]

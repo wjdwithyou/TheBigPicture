@@ -1,0 +1,378 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "JTAppleCollectionReusableView"
+provides-nominal:
+- "C15JTAppleCalendar29JTAppleCollectionReusableView"
+provides-member:
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", ""]
+provides-dynamic-lookup:
+- "update"
+- "view"
+depends-top-level:
+- "JTAppleHeaderView"
+- "NSCoder"
+- !private "CGPoint"
+- !private "*"
+- "JTAppleCollectionReusableView"
+- "CGRect"
+- "AssignmentPrecedence"
+- "UICollectionReusableView"
+- "JTAppleReusableViewProtocol"
+depends-member:
+- !private ["Ps9AnyObject", "CGPoint"]
+- ["Ps9AnyObject", "ViewType"]
+- !private ["Ps9AnyObject", "bounds"]
+- !private ["Ps9AnyObject", "center"]
+- !private ["Ps9AnyObject", "frame"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "setupView"]
+- ["Ps9AnyObject", "update"]
+- ["Ps9AnyObject", "view"]
+- ["Ps9AnyObject", ""]
+- !private ["PSo15CALayerDelegate", "CGPoint"]
+- ["PSo15CALayerDelegate", "ViewType"]
+- !private ["PSo15CALayerDelegate", "bounds"]
+- !private ["PSo15CALayerDelegate", "center"]
+- !private ["PSo15CALayerDelegate", "frame"]
+- ["PSo15CALayerDelegate", "init"]
+- ["PSo15CALayerDelegate", "setupView"]
+- ["PSo15CALayerDelegate", "update"]
+- ["PSo15CALayerDelegate", "view"]
+- ["PSo15CALayerDelegate", ""]
+- ["V12CoreGraphics7CGFloat", "deinit"]
+- ["VSC7CGPoint", "deinit"]
+- !private ["VSC7CGPoint", "init"]
+- ["VSC6CGRect", "deinit"]
+- !private ["VSC6CGRect", "size"]
+- !private ["VSC6CGSize", "height"]
+- !private ["VSC6CGSize", "width"]
+- !private ["Ps7CVarArg", "CGPoint"]
+- ["Ps7CVarArg", "ViewType"]
+- !private ["Ps7CVarArg", "bounds"]
+- !private ["Ps7CVarArg", "center"]
+- !private ["Ps7CVarArg", "frame"]
+- ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "setupView"]
+- ["Ps7CVarArg", "update"]
+- ["Ps7CVarArg", "view"]
+- ["Ps7CVarArg", ""]
+- !private ["Ps28CustomDebugStringConvertible", "CGPoint"]
+- ["Ps28CustomDebugStringConvertible", "ViewType"]
+- !private ["Ps28CustomDebugStringConvertible", "bounds"]
+- !private ["Ps28CustomDebugStringConvertible", "center"]
+- !private ["Ps28CustomDebugStringConvertible", "frame"]
+- !private ["Ps28CustomDebugStringConvertible", "height"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "setupView"]
+- !private ["Ps28CustomDebugStringConvertible", "size"]
+- ["Ps28CustomDebugStringConvertible", "update"]
+- ["Ps28CustomDebugStringConvertible", "view"]
+- !private ["Ps28CustomDebugStringConvertible", "width"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps29CustomPlaygroundQuickLookable", "height"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "size"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "width"]
+- !private ["Ps17CustomReflectable", "height"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "size"]
+- !private ["Ps17CustomReflectable", "width"]
+- !private ["Ps23CustomStringConvertible", "CGPoint"]
+- ["Ps23CustomStringConvertible", "ViewType"]
+- !private ["Ps23CustomStringConvertible", "bounds"]
+- !private ["Ps23CustomStringConvertible", "center"]
+- !private ["Ps23CustomStringConvertible", "frame"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "setupView"]
+- ["Ps23CustomStringConvertible", "update"]
+- ["Ps23CustomStringConvertible", "view"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Sd", "deinit"]
+- !private ["Ps9Equatable", "CGPoint"]
+- ["Ps9Equatable", "ViewType"]
+- !private ["Ps9Equatable", "bounds"]
+- !private ["Ps9Equatable", "center"]
+- !private ["Ps9Equatable", "frame"]
+- !private ["Ps9Equatable", "height"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "setupView"]
+- !private ["Ps9Equatable", "size"]
+- ["Ps9Equatable", "update"]
+- ["Ps9Equatable", "view"]
+- !private ["Ps9Equatable", "width"]
+- ["Ps9Equatable", ""]
+- !private ["Ps8Hashable", "CGPoint"]
+- ["Ps8Hashable", "ViewType"]
+- !private ["Ps8Hashable", "bounds"]
+- !private ["Ps8Hashable", "center"]
+- !private ["Ps8Hashable", "frame"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "setupView"]
+- ["Ps8Hashable", "update"]
+- ["Ps8Hashable", "view"]
+- ["Ps8Hashable", ""]
+- !private ["Si", "deinit"]
+- !private ["C15JTAppleCalendar29JTAppleCollectionReusableView", "CGPoint"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "CGRect"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "JTAppleHeaderView"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "NSCoder"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "ViewType"]
+- !private ["C15JTAppleCalendar29JTAppleCollectionReusableView", "bounds"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "deinit"]
+- !private ["C15JTAppleCalendar29JTAppleCollectionReusableView", "frame"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "init"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "setupView"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "update"]
+- ["C15JTAppleCalendar29JTAppleCollectionReusableView", "view"]
+- !private ["C15JTAppleCalendar17JTAppleHeaderView", "center"]
+- !private ["C15JTAppleCalendar17JTAppleHeaderView", "deinit"]
+- !private ["C15JTAppleCalendar17JTAppleHeaderView", "frame"]
+- !private ["P15JTAppleCalendar27JTAppleReusableViewProtocol", "CGPoint"]
+- ["P15JTAppleCalendar27JTAppleReusableViewProtocol", "ViewType"]
+- !private ["P15JTAppleCalendar27JTAppleReusableViewProtocol", "bounds"]
+- !private ["P15JTAppleCalendar27JTAppleReusableViewProtocol", "frame"]
+- ["P15JTAppleCalendar27JTAppleReusableViewProtocol", "setupView"]
+- ["P15JTAppleCalendar27JTAppleReusableViewProtocol", "view"]
+- ["P15JTAppleCalendar27JTAppleReusableViewProtocol", ""]
+- !private ["P15JTAppleCalendar19JTAppleViewProtocol", "center"]
+- !private ["P15JTAppleCalendar19JTAppleViewProtocol", "frame"]
+- ["CSo7NSCoder", "deinit"]
+- !private ["PSo8NSCoding", "CGPoint"]
+- ["PSo8NSCoding", "ViewType"]
+- !private ["PSo8NSCoding", "bounds"]
+- !private ["PSo8NSCoding", "center"]
+- !private ["PSo8NSCoding", "frame"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "setupView"]
+- ["PSo8NSCoding", "update"]
+- ["PSo8NSCoding", "view"]
+- ["PSo8NSCoding", ""]
+- !private ["CSo8NSObject", "CGPoint"]
+- ["CSo8NSObject", "CGRect"]
+- ["CSo8NSObject", "JTAppleHeaderView"]
+- ["CSo8NSObject", "NSCoder"]
+- ["CSo8NSObject", "ViewType"]
+- !private ["CSo8NSObject", "bounds"]
+- !private ["CSo8NSObject", "center"]
+- !private ["CSo8NSObject", "frame"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "setupView"]
+- ["CSo8NSObject", "update"]
+- ["CSo8NSObject", "view"]
+- !private ["PSo16NSObjectProtocol", "CGPoint"]
+- ["PSo16NSObjectProtocol", "ViewType"]
+- !private ["PSo16NSObjectProtocol", "bounds"]
+- !private ["PSo16NSObjectProtocol", "center"]
+- !private ["PSo16NSObjectProtocol", "frame"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "setupView"]
+- ["PSo16NSObjectProtocol", "update"]
+- ["PSo16NSObjectProtocol", "view"]
+- ["PSo16NSObjectProtocol", ""]
+- ["Sq", "deinit"]
+- !private ["PSo29UIAccessibilityIdentification", "CGPoint"]
+- ["PSo29UIAccessibilityIdentification", "ViewType"]
+- !private ["PSo29UIAccessibilityIdentification", "bounds"]
+- !private ["PSo29UIAccessibilityIdentification", "center"]
+- !private ["PSo29UIAccessibilityIdentification", "frame"]
+- ["PSo29UIAccessibilityIdentification", "init"]
+- ["PSo29UIAccessibilityIdentification", "setupView"]
+- ["PSo29UIAccessibilityIdentification", "update"]
+- ["PSo29UIAccessibilityIdentification", "view"]
+- ["PSo29UIAccessibilityIdentification", ""]
+- !private ["PSo12UIAppearance", "CGPoint"]
+- ["PSo12UIAppearance", "ViewType"]
+- !private ["PSo12UIAppearance", "bounds"]
+- !private ["PSo12UIAppearance", "center"]
+- !private ["PSo12UIAppearance", "frame"]
+- ["PSo12UIAppearance", "init"]
+- ["PSo12UIAppearance", "setupView"]
+- ["PSo12UIAppearance", "update"]
+- ["PSo12UIAppearance", "view"]
+- ["PSo12UIAppearance", ""]
+- !private ["PSo21UIAppearanceContainer", "CGPoint"]
+- ["PSo21UIAppearanceContainer", "ViewType"]
+- !private ["PSo21UIAppearanceContainer", "bounds"]
+- !private ["PSo21UIAppearanceContainer", "center"]
+- !private ["PSo21UIAppearanceContainer", "frame"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "setupView"]
+- ["PSo21UIAppearanceContainer", "update"]
+- ["PSo21UIAppearanceContainer", "view"]
+- ["PSo21UIAppearanceContainer", ""]
+- !private ["CSo24UICollectionReusableView", "CGPoint"]
+- ["CSo24UICollectionReusableView", "CGRect"]
+- ["CSo24UICollectionReusableView", "JTAppleHeaderView"]
+- ["CSo24UICollectionReusableView", "NSCoder"]
+- ["CSo24UICollectionReusableView", "ViewType"]
+- !private ["CSo24UICollectionReusableView", "bounds"]
+- ["CSo24UICollectionReusableView", "deinit"]
+- !private ["CSo24UICollectionReusableView", "frame"]
+- ["CSo24UICollectionReusableView", "init"]
+- ["CSo24UICollectionReusableView", "setupView"]
+- ["CSo24UICollectionReusableView", "update"]
+- ["CSo24UICollectionReusableView", "view"]
+- ["CSo24UICollectionReusableView", ""]
+- !private ["PSo17UICoordinateSpace", "CGPoint"]
+- ["PSo17UICoordinateSpace", "ViewType"]
+- !private ["PSo17UICoordinateSpace", "bounds"]
+- !private ["PSo17UICoordinateSpace", "center"]
+- !private ["PSo17UICoordinateSpace", "frame"]
+- ["PSo17UICoordinateSpace", "init"]
+- ["PSo17UICoordinateSpace", "setupView"]
+- ["PSo17UICoordinateSpace", "update"]
+- ["PSo17UICoordinateSpace", "view"]
+- ["PSo17UICoordinateSpace", ""]
+- !private ["PSo13UIDynamicItem", "CGPoint"]
+- ["PSo13UIDynamicItem", "ViewType"]
+- !private ["PSo13UIDynamicItem", "bounds"]
+- !private ["PSo13UIDynamicItem", "center"]
+- !private ["PSo13UIDynamicItem", "frame"]
+- ["PSo13UIDynamicItem", "init"]
+- ["PSo13UIDynamicItem", "setupView"]
+- ["PSo13UIDynamicItem", "update"]
+- ["PSo13UIDynamicItem", "view"]
+- ["PSo13UIDynamicItem", ""]
+- !private ["PSo18UIFocusEnvironment", "CGPoint"]
+- ["PSo18UIFocusEnvironment", "ViewType"]
+- !private ["PSo18UIFocusEnvironment", "bounds"]
+- !private ["PSo18UIFocusEnvironment", "center"]
+- !private ["PSo18UIFocusEnvironment", "frame"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "setupView"]
+- ["PSo18UIFocusEnvironment", "update"]
+- ["PSo18UIFocusEnvironment", "view"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "CGPoint"]
+- ["PSo11UIFocusItem", "ViewType"]
+- !private ["PSo11UIFocusItem", "bounds"]
+- !private ["PSo11UIFocusItem", "center"]
+- !private ["PSo11UIFocusItem", "frame"]
+- ["PSo11UIFocusItem", "init"]
+- ["PSo11UIFocusItem", "setupView"]
+- ["PSo11UIFocusItem", "update"]
+- ["PSo11UIFocusItem", "view"]
+- ["PSo11UIFocusItem", ""]
+- !private ["CSo11UIResponder", "CGPoint"]
+- ["CSo11UIResponder", "CGRect"]
+- ["CSo11UIResponder", "JTAppleHeaderView"]
+- ["CSo11UIResponder", "NSCoder"]
+- ["CSo11UIResponder", "ViewType"]
+- !private ["CSo11UIResponder", "bounds"]
+- !private ["CSo11UIResponder", "center"]
+- !private ["CSo11UIResponder", "frame"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "setupView"]
+- ["CSo11UIResponder", "update"]
+- ["CSo11UIResponder", "view"]
+- !private ["PSo30UIResponderStandardEditActions", "CGPoint"]
+- ["PSo30UIResponderStandardEditActions", "ViewType"]
+- !private ["PSo30UIResponderStandardEditActions", "bounds"]
+- !private ["PSo30UIResponderStandardEditActions", "center"]
+- !private ["PSo30UIResponderStandardEditActions", "frame"]
+- ["PSo30UIResponderStandardEditActions", "init"]
+- ["PSo30UIResponderStandardEditActions", "setupView"]
+- ["PSo30UIResponderStandardEditActions", "update"]
+- ["PSo30UIResponderStandardEditActions", "view"]
+- ["PSo30UIResponderStandardEditActions", ""]
+- !private ["PSo18UITraitEnvironment", "CGPoint"]
+- ["PSo18UITraitEnvironment", "ViewType"]
+- !private ["PSo18UITraitEnvironment", "bounds"]
+- !private ["PSo18UITraitEnvironment", "center"]
+- !private ["PSo18UITraitEnvironment", "frame"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "setupView"]
+- ["PSo18UITraitEnvironment", "update"]
+- ["PSo18UITraitEnvironment", "view"]
+- ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "CGPoint"]
+- ["CSo6UIView", "CGRect"]
+- ["CSo6UIView", "JTAppleHeaderView"]
+- ["CSo6UIView", "NSCoder"]
+- ["CSo6UIView", "ViewType"]
+- !private ["CSo6UIView", "bounds"]
+- !private ["CSo6UIView", "center"]
+- !private ["CSo6UIView", "frame"]
+- ["CSo6UIView", "init"]
+- ["CSo6UIView", "setupView"]
+- ["CSo6UIView", "update"]
+- ["CSo6UIView", "view"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "CGPoint"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", "ViewType"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "bounds"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "center"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "frame"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", "init"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", "setupView"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", "update"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", "view"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", ""]
+- !private ["Ps9_Hashable", "CGPoint"]
+- ["Ps9_Hashable", "ViewType"]
+- !private ["Ps9_Hashable", "bounds"]
+- !private ["Ps9_Hashable", "center"]
+- !private ["Ps9_Hashable", "frame"]
+- ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "setupView"]
+- ["Ps9_Hashable", "update"]
+- ["Ps9_Hashable", "view"]
+- ["Ps9_Hashable", ""]
+- !private ["Ps21_ObjectiveCBridgeable", "height"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "size"]
+- !private ["Ps21_ObjectiveCBridgeable", "width"]
+depends-nominal:
+- "Ps9AnyObject"
+- "PSo15CALayerDelegate"
+- "V12CoreGraphics7CGFloat"
+- "VSC7CGPoint"
+- "VSC6CGRect"
+- !private "VSC6CGSize"
+- "Ps7CVarArg"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- !private "Sd"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- !private "Si"
+- "C15JTAppleCalendar29JTAppleCollectionReusableView"
+- !private "C15JTAppleCalendar17JTAppleHeaderView"
+- "P15JTAppleCalendar27JTAppleReusableViewProtocol"
+- !private "P15JTAppleCalendar19JTAppleViewProtocol"
+- "CSo7NSCoder"
+- "PSo8NSCoding"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "Sq"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "CSo24UICollectionReusableView"
+- "PSo17UICoordinateSpace"
+- "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- "PSo11UIFocusItem"
+- "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
+- "PSo18UITraitEnvironment"
+- "CSo6UIView"
+- "Ps37_DefaultCustomPlaygroundQuickLookable"
+- "Ps9_Hashable"
+- !private "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/J.Style/Desktop/TheBigPicture/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-umbrella.h"
+- "/Users/J.Style/Desktop/TheBigPicture/build/Pods.build/Debug-iphonesimulator/JTAppleCalendar.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "b17051aeacf296b719db6837dfd75fe8"

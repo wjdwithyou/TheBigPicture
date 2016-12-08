@@ -49,6 +49,8 @@ class Controller_MindMap: UIViewController
             {
                 let new_view_node = View_MindMapNode(model:node.value)
                 
+                new_view_node.button.addTarget(self, action: #selector(self.pressed(sender:)), for: .touchUpInside)
+                
                 self.map_view_node[node.value.id] = new_view_node
                 self.scroll_view.addSubview(new_view_node.button)
             }
@@ -83,5 +85,18 @@ class Controller_MindMap: UIViewController
         return child_y
     }
     
+    func pressed(sender: UIButton!){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! Controller_Detail
+        
+        vc.receivedText = String(describing: sender.titleLabel!.text!)
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func unwindToPrev(segue:UIStoryboardSegue){
+        //print("unwindToMindMap")
+    }
 }
 

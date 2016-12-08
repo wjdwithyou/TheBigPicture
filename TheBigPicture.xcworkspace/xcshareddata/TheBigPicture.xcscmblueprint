@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "74B7F92A65743448AF77E929E7132C24D1936D11",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "74B7F92A65743448AF77E929E7132C24D1936D11" : 9223372036854775807,
+    "9C4323084EAEB43DA7592635022C576F3653394F" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1FCDCDD2-1497-4A18-801C-6F38E5AE643F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "74B7F92A65743448AF77E929E7132C24D1936D11" : "TheBigPicture\/",
+    "9C4323084EAEB43DA7592635022C576F3653394F" : "KCFloatingActionButton\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TheBigPicture",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TheBigPicture.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wjdwithyou\/TheBigPicture.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74B7F92A65743448AF77E929E7132C24D1936D11"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kciter\/KCFloatingActionButton.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C4323084EAEB43DA7592635022C576F3653394F"
+    }
+  ]
+}
