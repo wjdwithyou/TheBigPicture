@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/J.Style/Desktop/TheBigPicture/build/Debug-iphonesimulator/JTAppleCalendar/JTAppleCalendar.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "JTAppleCalendar-Swift.h",
+          'external-contents': "/Users/J.Style/Desktop/TheBigPicture/build/Debug-iphonesimulator/JTAppleCalendar/JTAppleCalendar.framework/Headers/JTAppleCalendar-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "JTAppleCalendar-umbrella.h",
+          'external-contents': "/Users/J.Style/Desktop/TheBigPicture/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/J.Style/Desktop/TheBigPicture/build/Debug-iphonesimulator/JTAppleCalendar/JTAppleCalendar.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/J.Style/Desktop/TheBigPicture/build/Pods.build/Debug-iphonesimulator/JTAppleCalendar.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

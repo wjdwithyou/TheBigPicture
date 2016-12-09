@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/J.Style/Desktop/TheBigPicture/build/Debug-iphonesimulator/JTAppleCalendar/JTAppleCalendar.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/J.Style/Desktop/TheBigPicture/build/Pods.build/Debug-iphonesimulator/JTAppleCalendar.build/unextended-module.modulemap',
+    }]
+  }]
+}

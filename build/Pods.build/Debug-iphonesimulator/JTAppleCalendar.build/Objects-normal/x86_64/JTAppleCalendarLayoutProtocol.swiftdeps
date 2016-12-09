@@ -1,0 +1,52 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "JTAppleCalendarLayoutProtocol"
+provides-nominal:
+- "P15JTAppleCalendar29JTAppleCalendarLayoutProtocol"
+provides-member:
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "UICollectionViewLayoutAttributes"
+- "JTAppleCalendarLayoutProtocol"
+- "CGFloat"
+- "CGSize"
+- "CGPoint"
+- "Int"
+- "UICollectionViewScrollDirection"
+depends-member:
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "CGFloat"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "CGPoint"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "CGSize"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "Int"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "UICollectionViewLayoutAttributes"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "UICollectionViewScrollDirection"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "cellCache"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "clearCache"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "headerCache"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "headerReferenceSize"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "itemSize"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "prepare"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "scrollDirection"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "sectionFromOffset"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "sectionSize"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "sizeOfContentForSection"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", "targetContentOffsetForProposedContentOffset"]
+- ["P15JTAppleCalendar29JTAppleCalendarLayoutProtocol", ""]
+depends-nominal:
+- "P15JTAppleCalendar29JTAppleCalendarLayoutProtocol"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/J.Style/Desktop/TheBigPicture/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-umbrella.h"
+- "/Users/J.Style/Desktop/TheBigPicture/build/Pods.build/Debug-iphonesimulator/JTAppleCalendar.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "0fa4de750298c22b4822c9cd1f581e11"

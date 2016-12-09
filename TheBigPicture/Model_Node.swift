@@ -113,23 +113,23 @@ func initialize_test_data()
 {
     for node in test_nodes
     {
-        s_node_container.create_node(node_id:node.id, parent_id:node.parent_id)
+        s_node_container.create_node(node_id: node.id, parent_id:node.parent_id)
     }
     
     for var node in test_nodes
     {
         if node.parent_id != -1
         {
-            var parent_node = s_node_container.get_node(node_id:node.parent_id)
+            var parent_node = s_node_container.get_node(node_id: node.parent_id)
             
             node.parent = parent_node
             
-            parent_node.add_child(child:node)
+            parent_node.add_child(child: node)
         }
     }
     
     for comp in test_components_name
     {
-        s_node_container.get_node(node_id:comp.node_id).add_component(component:comp)
+        s_node_container.get_node(node_id: comp.node_id).add_component(component: comp)
     }
 }
