@@ -8,7 +8,7 @@
 
 import UIKit
 
-class View_MainController: UITabBarController {
+class Controller_Main: UITabBarController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
