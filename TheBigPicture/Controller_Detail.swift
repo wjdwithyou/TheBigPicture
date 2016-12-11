@@ -12,7 +12,7 @@ class Controller_Detail: UIViewController
 {
     @IBOutlet weak var DetailTitle: UINavigationItem!
     
-    var model: Model_Node?
+    var model: Model_Node!
     
     var map_view:[View_Component]
     
@@ -34,7 +34,7 @@ class Controller_Detail: UIViewController
         
         self.map_view = []
         
-        for comp in (model?.components)!
+        for comp in model.components
         {
             if let comp_name = comp as? Model_Component_Name
             {
@@ -43,20 +43,42 @@ class Controller_Detail: UIViewController
             
             if let comp_text = comp as? Model_Component_Text
             {
-                var new_view_comp_text = View_Component_Text(model:comp_text, ctrl_detail:self)
-                
-                self.map_view.append(new_view_comp_text)
-                
-                self.view.addSubview(new_view_comp_text.text_view)
+                self.add_view_comp_text(model:comp_text)
             }
         }
+        
+        let fab = KCFloatingActionButton()
+        fab.plusColor = UIColor(red: 30/255.0, green: 45/255.0, blue: 66/255.0, alpha: 1)
+        fab.buttonColor = UIColor(white: 0.9, alpha: 1)
+        fab.addItem(title: "Date", handler:
+        {
+            item in
+            
+            self.render()
+        })
+        fab.addItem(title: "Text", handler:
+        {
+            item in
+            var model_comp_text = Model_Component_Text(id:s_generic_index, node_id:self.model.id, text:"")
+            self.model.add_component(component: model_comp_text)
+            self.add_view_comp_text(model:model_comp_text)
+            
+            s_generic_index = s_generic_index + 1
+            
+            self.render()
+        })
+        self.view.addSubview(fab)
 
         self.render()
     }
     
-    override func viewDidAppear(_ animated: Bool)
+    func add_view_comp_text(model:Model_Component_Text)
     {
-
+        var new_view_comp_text = View_Component_Text(model:model, ctrl_detail:self)
+        
+        self.map_view.append(new_view_comp_text)
+        
+        self.view.addSubview(new_view_comp_text.text_view)
     }
     
     func render()

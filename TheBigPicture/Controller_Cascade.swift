@@ -170,9 +170,9 @@ class Controller_Cascade: UIViewController
         
         if self.edit_mode == EDIT_MODE.ADD
         {
-            let model_node = s_node_container.create_node(node_id:s_node_index, parent_id:view_node.model.id)
+            let model_node = s_node_container.create_node(node_id:s_generic_index, parent_id:view_node.model.id)
             
-            s_node_index = s_node_index + 1
+            s_generic_index = s_generic_index + 1
             s_node_container.attach_child(parent_id:model_node.parent_id, child_id:model_node.id)
             
             self.render()
