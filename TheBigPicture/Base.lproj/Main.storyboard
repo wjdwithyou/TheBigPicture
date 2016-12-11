@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="5199.1999999999998" y="137.18140929535232"/>
         </scene>
-        <!--View Main Controller-->
+        <!--Controller Main-->
         <scene sceneID="gL3-Ho-8I1">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kHX-az-MY1" customClass="View_MainController" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kHX-az-MY1" customClass="Controller_Main" customModule="TheBigPicture" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Xgy-x0-j3V">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
