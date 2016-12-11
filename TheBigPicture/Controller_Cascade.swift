@@ -61,6 +61,11 @@ class Controller_Cascade: UIViewController
         self.render()
     }
     
+    override func viewDidAppear(_ animated: Bool)
+    {
+        self.render()
+    }
+    
     func transit_add_mode()
     {
         for view_node in self.map_view_node
@@ -102,6 +107,16 @@ class Controller_Cascade: UIViewController
         self.map_view_node[model.id] = new_view_node
         self.map_view_node_by_button[new_view_node.button] = new_view_node
         self.scroll_view.addSubview(new_view_node.button)
+        
+        if self.edit_mode == EDIT_MODE.ADD
+        {
+            self.transit_add_mode()
+        }
+        
+        if self.edit_mode == EDIT_MODE.DELETE
+        {
+            self.transit_delete_mode()
+        }
     }
     
     func render()
@@ -138,7 +153,9 @@ class Controller_Cascade: UIViewController
             child_pos.x = pos.x + stride_x
             child_pos.y = pos.y + child_y
             
-            child_y += self.arrange_cascade(pos: child_pos, node:s_node_container.get_node(node_id: child.id))
+            //child_y += self.arrange_cascade(pos: child_pos, node:s_node_container.get_node(node_id: child.id))
+            
+            child_y += self.arrange_cascade(pos: child_pos, node:child)
         }
         
         node.x = pos.x
@@ -163,11 +180,18 @@ class Controller_Cascade: UIViewController
         
         if self.edit_mode == EDIT_MODE.DELETE
         {
-            s_node_container.delete_node(node_id:view_node.model.id)
-            view_node.button.removeFromSuperview()
+            var delete_id_list = view_node.model.get_all_children_id()
             
-            self.map_view_node[view_node.model.id] = nil
-            self.map_view_node_by_button[view_node.button] = nil
+            for delete_id in delete_id_list
+            {
+                var delete_view_node = self.map_view_node[delete_id]!
+                
+                s_node_container.delete_node(node_id:delete_view_node.model.id)
+                delete_view_node.button.removeFromSuperview()
+                
+                self.map_view_node[delete_view_node.model.id] = nil
+                self.map_view_node_by_button[delete_view_node.button] = nil
+            }
             
             self.render()
         }
