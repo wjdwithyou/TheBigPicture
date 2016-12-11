@@ -10,6 +10,7 @@ import UIKit
 
 class Controller_MindMap: UIViewController
 {
+    var edit_mode:EDIT_MODE
     var map_view_node:[Int:View_MindMapNode]
     
     @IBOutlet weak var scroll_view: UIScrollView!
@@ -17,6 +18,7 @@ class Controller_MindMap: UIViewController
     required init?(coder aDecoder: NSCoder)
     {
         self.map_view_node = [:]
+        self.edit_mode = EDIT_MODE.NORMAL
         
         super.init(coder: aDecoder)
     }
@@ -32,14 +34,54 @@ class Controller_MindMap: UIViewController
         
         self.scroll_view.frame.size.width = self.view.frame.width
         self.scroll_view.frame.size.height = self.view.frame.height - 40 - 74
+        self.scroll_view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.transit_normal_mode)))
         
         let fab = KCFloatingActionButton()
-        fab.addItem(title: "Edit")
-        fab.addItem(title: "Delete")
-        fab.addItem(title: "New")
+        fab.addItem(title: "Delete", handler:
+            {
+                item in
+                self.transit_delete_mode()
+        })
+        fab.addItem(title: "New", handler:
+            {
+                item in
+                self.transit_add_mode()
+        })
         self.view.addSubview(fab)
         
         self.render()
+    }
+    
+    func transit_add_mode()
+    {
+        for view_node in self.map_view_node
+        {
+            view_node.value.button.layer.borderWidth = 4
+            view_node.value.button.layer.borderColor = UIColor(red:1, green:1, blue:0.0, alpha: 1.0).cgColor
+        }
+        
+        self.edit_mode = EDIT_MODE.ADD
+    }
+    
+    func transit_delete_mode()
+    {
+        for view_node in self.map_view_node
+        {
+            view_node.value.button.layer.borderWidth = 4
+            view_node.value.button.layer.borderColor = UIColor(red:1, green:0.0, blue:0.0, alpha: 1.0).cgColor
+        }
+        
+        self.edit_mode = EDIT_MODE.DELETE
+    }
+    
+    func transit_normal_mode()
+    {
+        for view_node in self.map_view_node
+        {
+            view_node.value.button.layer.borderWidth = 0
+        }
+        
+        self.edit_mode = EDIT_MODE.NORMAL
     }
     
     func render()
@@ -91,14 +133,28 @@ class Controller_MindMap: UIViewController
         return child_y
     }
     
-    func pressed(sender: UIButton!){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    func pressed(sender: UIButton!)
+    {
+        if self.edit_mode == EDIT_MODE.ADD
+        {
+            
+        }
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! Controller_Detail
+        if self.edit_mode == EDIT_MODE.DELETE
+        {
+            
+        }
         
-        vc.receivedText = String(describing: sender.titleLabel!.text!)
+        if self.edit_mode == EDIT_MODE.NORMAL
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        self.present(vc, animated: true, completion: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! Controller_Detail
+        
+            vc.receivedText = String(describing: sender.titleLabel!.text!)
+        
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func unwindToPrev(segue:UIStoryboardSegue){
