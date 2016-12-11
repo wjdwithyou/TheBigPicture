@@ -12,12 +12,14 @@ class Controller_MindMap: UIViewController
 {
     var edit_mode:EDIT_MODE
     var map_view_node:[Int:View_MindMapNode]
+    var map_view_node_by_button:[UIButton:View_CascadeNode]
     
     @IBOutlet weak var scroll_view: UIScrollView!
     
     required init?(coder aDecoder: NSCoder)
     {
         self.map_view_node = [:]
+        self.map_view_node_by_button = [:]
         self.edit_mode = EDIT_MODE.NORMAL
         
         super.init(coder: aDecoder)
@@ -135,6 +137,8 @@ class Controller_MindMap: UIViewController
     
     func pressed(sender: UIButton!)
     {
+        let view_node = self.map_view_node_by_button[sender]!
+        
         if self.edit_mode == EDIT_MODE.ADD
         {
             
@@ -150,8 +154,8 @@ class Controller_MindMap: UIViewController
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
             let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! Controller_Detail
-        
-            vc.receivedText = String(describing: sender.titleLabel!.text!)
+            
+            vc.receivedNode = view_node
         
             self.present(vc, animated: true, completion: nil)
         }
