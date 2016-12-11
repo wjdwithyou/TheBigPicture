@@ -202,7 +202,7 @@ class Controller_Cascade: UIViewController
             
             let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! Controller_Detail
             
-            vc.receivedModel = view_node.model
+            vc.model = view_node.model
             
             self.present(vc, animated: true, completion: nil)
         }

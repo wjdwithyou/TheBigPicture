@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum COMP_TYPE
 {
@@ -17,9 +18,9 @@ enum COMP_TYPE
 
 class Model_Component
 {
-    let id: Int
-    let node_id: Int
-    let type: COMP_TYPE
+    var id: Int
+    var node_id: Int
+    var type: COMP_TYPE
     
     init(id: Int, node_id: Int, type: COMP_TYPE)
     {
