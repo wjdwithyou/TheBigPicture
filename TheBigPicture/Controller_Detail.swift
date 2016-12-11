@@ -18,7 +18,7 @@ class Controller_Detail: UIViewController
     let textViewOriginX: CGFloat = 25
     let textViewOriginY: CGFloat = 85
     
-    var receivedNode: View_CascadeNode?
+    var receivedModel: Model_Node?
     
     override func viewDidLoad()
     {
@@ -50,7 +50,7 @@ class Controller_Detail: UIViewController
     {
         var textViewY: CGFloat = self.textViewOriginY
         
-        for comp in (receivedNode?.model.components)!
+        for comp in (receivedModel?.components)!
         {
             if let comp_name = comp as? Model_Component_Name
             {
@@ -103,8 +103,8 @@ class Controller_Detail: UIViewController
     
     func handleViewTap(recognizer: UIGestureRecognizer) {
         var cnt = 0
-        let index: Int = receivedNode!.model.id
-        let first: Model_Component = (receivedNode?.model.components.first)!
+        let index: Int = receivedModel!.id
+        let first: Model_Component = (receivedModel!.components.first)!
         
         s_node_container.map_node[index]?.clear_component()
         s_node_container.map_node[index]?.add_component(component: first)
