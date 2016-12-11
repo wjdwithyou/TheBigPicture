@@ -35,6 +35,11 @@ class Model_Node
         children.append(child)
     }
     
+    func delete_child(child:Model_Node)
+    {
+        children = children.filter() { $0 !== child }
+    }
+    
     func add_component(component:Model_Component) -> Void
     {
         components.append(component)
@@ -56,7 +61,7 @@ class Model_NodeContainer
         self.root_node = nil
     }
     
-    func create_node(node_id:Int, parent_id:Int)
+    func create_node(node_id:Int, parent_id:Int) -> Model_Node
     {
         let node = Model_Node(id:node_id, parent_id:parent_id)
     
@@ -66,6 +71,30 @@ class Model_NodeContainer
         }
     
         self.map_node[node_id] = node
+        
+        return node
+    }
+    
+    func delete_node(node_id:Int)
+    {
+        let node = self.get_node(node_id:node_id)
+        
+        if node.parent != nil
+        {
+            node.parent!.delete_child(child:node)
+        }
+        
+        self.map_node[node.id] = nil
+    }
+    
+    func attach_child(parent_id:Int, child_id:Int)
+    {
+        var parent_node = s_node_container.get_node(node_id:parent_id)
+        var child_node = s_node_container.get_node(node_id:child_id)
+        
+        child_node.parent = parent_node
+        
+        parent_node.add_child(child: child_node)
     }
     
     func get_node(node_id:Int) -> Model_Node
@@ -75,6 +104,7 @@ class Model_NodeContainer
 }
 
 var s_node_container = Model_NodeContainer()
+var s_node_index = 10000
 
 var test_nodes = [
     Model_Node(id:1,    parent_id:-1),
@@ -120,11 +150,7 @@ func initialize_test_data()
     {
         if node.parent_id != -1
         {
-            var parent_node = s_node_container.get_node(node_id: node.parent_id)
-            
-            node.parent = parent_node
-            
-            parent_node.add_child(child: node)
+            s_node_container.attach_child(parent_id:node.parent_id, child_id:node.id)
         }
     }
     
