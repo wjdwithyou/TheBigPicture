@@ -12,12 +12,14 @@ class Controller_MindMap: UIViewController
 {
     var edit_mode:EDIT_MODE
     var map_view_node:[Int:View_MindMapNode]
+    var map_view_node_by_button:[UIButton:View_MindMapNode]
     
     @IBOutlet weak var scroll_view: UIScrollView!
     
     required init?(coder aDecoder: NSCoder)
     {
         self.map_view_node = [:]
+        self.map_view_node_by_button = [:]
         self.edit_mode = EDIT_MODE.NORMAL
         
         super.init(coder: aDecoder)
@@ -38,17 +40,22 @@ class Controller_MindMap: UIViewController
         
         let fab = KCFloatingActionButton()
         fab.addItem(title: "Delete", handler:
-            {
-                item in
-                self.transit_delete_mode()
+        {
+            item in
+            self.transit_delete_mode()
         })
         fab.addItem(title: "New", handler:
-            {
-                item in
-                self.transit_add_mode()
+        {
+            item in
+            self.transit_add_mode()
         })
         self.view.addSubview(fab)
         
+        self.render()
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
         self.render()
     }
     
@@ -84,6 +91,28 @@ class Controller_MindMap: UIViewController
         self.edit_mode = EDIT_MODE.NORMAL
     }
     
+    func create_view_node(model:Model_Node)
+    {
+        var new_view_node = View_MindMapNode(model:model)
+        
+        new_view_node.button.addTarget(self, action: #selector(self.pressed(sender:)), for: .touchUpInside)
+        
+        self.map_view_node[model.id] = new_view_node
+        self.map_view_node_by_button[new_view_node.button] = new_view_node
+        self.scroll_view.addSubview(new_view_node.button)
+        self.scroll_view.layer.addSublayer(new_view_node.shapeLayer)
+        
+        if self.edit_mode == EDIT_MODE.ADD
+        {
+            self.transit_add_mode()
+        }
+        
+        if self.edit_mode == EDIT_MODE.DELETE
+        {
+            self.transit_delete_mode()
+        }
+    }
+    
     func render()
     {
         let content_height = self.arrange_spread(pos: CGPoint(x:10, y:10), node: s_node_container.root_node!)
@@ -95,12 +124,7 @@ class Controller_MindMap: UIViewController
         {
             if self.map_view_node[node.value.id] == nil
             {
-                let new_view_node = View_MindMapNode(model:node.value)
-                
-                new_view_node.button.addTarget(self, action: #selector(self.pressed(sender:)), for: .touchUpInside)
-                
-                self.map_view_node[node.value.id] = new_view_node
-                self.scroll_view.addSubview(new_view_node.button)
+                self.create_view_node(model:node.value)
             }
             else
             {
@@ -113,9 +137,9 @@ class Controller_MindMap: UIViewController
     
     func arrange_spread(pos:CGPoint, node:Model_Node) -> CGFloat
     {
-        let stride_x:CGFloat = 150 + 20
+        let stride_x:CGFloat = 150 + 30
         let node_height:CGFloat = 30
-        var child_y:CGFloat = node.children.count > 0 ? 0 : node_height + 15
+        var child_y:CGFloat = node.children.count > 0 ? 0 : node_height + 20
         
         for child in node.children
         {
@@ -124,7 +148,9 @@ class Controller_MindMap: UIViewController
             child_pos.x = pos.x + stride_x
             child_pos.y = pos.y + child_y
             
-            child_y += self.arrange_spread(pos:child_pos, node:s_node_container.get_node(node_id:child.id))
+            //child_y += self.arrange_spread(pos:child_pos, node:s_node_container.get_node(node_id:child.id))
+            
+            child_y += self.arrange_spread(pos:child_pos, node:child)
         }
         
         node.x = pos.x
@@ -135,14 +161,34 @@ class Controller_MindMap: UIViewController
     
     func pressed(sender: UIButton!)
     {
+        let view_node = self.map_view_node_by_button[sender]!
+        
         if self.edit_mode == EDIT_MODE.ADD
         {
+            let model_node = s_node_container.create_node(node_id:s_node_index, parent_id:view_node.model.id)
             
+            s_node_index = s_node_index + 1
+            s_node_container.attach_child(parent_id:model_node.parent_id, child_id:model_node.id)
+            
+            self.render()
         }
         
         if self.edit_mode == EDIT_MODE.DELETE
         {
+            var delete_id_list = view_node.model.get_all_children_id()
             
+            for delete_id in delete_id_list
+            {
+                var delete_view_node = self.map_view_node[delete_id]!
+                
+                s_node_container.delete_node(node_id:delete_view_node.model.id)
+                delete_view_node.button.removeFromSuperview()
+                
+                self.map_view_node[delete_view_node.model.id] = nil
+                self.map_view_node_by_button[delete_view_node.button] = nil
+            }
+            
+            self.render()
         }
         
         if self.edit_mode == EDIT_MODE.NORMAL
