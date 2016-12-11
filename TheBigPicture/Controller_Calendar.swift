@@ -12,6 +12,8 @@ import JTAppleCalendar
 class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate
 {
     @IBOutlet var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var label_month: UILabel!
+    
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
@@ -25,12 +27,14 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
     override func viewDidLoad()
     {
         self.view.backgroundColor = UIColor(white:0.9, alpha: 1)
+        
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView")
     }
     
-    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters
+    {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
@@ -43,22 +47,41 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
             generateInDates: .forAllMonths,
             generateOutDates: .tillEndOfGrid,
             firstDayOfWeek: .sunday)
+        
         return parameters
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
+    func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState)
+    {
         let myCustomCell = cell as! CellView
-        
-//        // Setup Cell text
         myCustomCell.dayLabel.text = cellState.text
         
-        // Setup text color
-        if cellState.dateBelongsTo == .thisMonth {
+        if cellState.dateBelongsTo == .thisMonth
+        {
             myCustomCell.dayLabel.textColor = UIColor.black
-        } else {
+        }
+        else
+        {
             myCustomCell.dayLabel.textColor = UIColor.gray
         }
     }
     
+    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo)
+    {
+    }
+
+    func scrollDidEndDecelerating(for calendar: JTAppleCalendarView)
+    {
+        guard let startDate = calendar.visibleDates().monthDates.first else
+        {
+            return
+        }
+        
+        let month = Calendar.current.dateComponents([.month], from: startDate).month!
+        let monthName = DateFormatter().monthSymbols[(month-1) % 12]
+        let year = Calendar.current.component(.year, from: startDate)
+        
+        label_month.text = monthName + " " + String(year)
+    }
 }
 
