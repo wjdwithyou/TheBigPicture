@@ -31,6 +31,9 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView")
+        
+        self.calendarView.frame.size.width = self.view.frame.width
+        self.label_month.frame.size.width = self.view.frame.width
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters
@@ -43,10 +46,10 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
-            calendar: Calendar.current,
-            generateInDates: .forAllMonths,
-            generateOutDates: .tillEndOfGrid,
-            firstDayOfWeek: .sunday)
+                                                calendar: Calendar.current,
+                                                generateInDates: .forAllMonths,
+                                                generateOutDates: .tillEndOfGrid,
+                                                firstDayOfWeek: .sunday)
         
         return parameters
     }
@@ -59,6 +62,10 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         if cellState.dateBelongsTo == .thisMonth
         {
             myCustomCell.dayLabel.textColor = UIColor.black
+        }
+        else if cellState.dateBelongsTo ==
+        {
+            myCustomCell.dayLabel.textColor = UIColor.red
         }
         else
         {
