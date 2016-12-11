@@ -11,6 +11,7 @@ import UIKit
 
 class View_Component_Text
 {
+    /*
     var model:Model_Component_Text
     var text_view:UITextView
     
@@ -94,4 +95,5 @@ class View_Component_Text
         
         resizeTextView_After()
     }
+    */
 }
