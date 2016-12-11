@@ -15,17 +15,18 @@
 		923EF9911DC8687500B22790 /* TheBigPictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EF9901DC8687500B22790 /* TheBigPictureTests.swift */; };
 		92558B3B1DEF09F700FA7CB3 /* Controller_MindMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92558B3A1DEF09F700FA7CB3 /* Controller_MindMap.swift */; };
 		929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929223051DE41A39007A4BF4 /* View_CascadeNode.swift */; };
+		929BF3F51DFD714C0021272A /* View_Component_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BF3F41DFD714C0021272A /* View_Component_Text.swift */; };
 		92ACC91E1DF72E85008F902B /* Controller_Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */; };
 		92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92251DF54389004C92C6 /* View_MindMapNode.swift */; };
-		92EA92281DF5DBFB004C92C6 /* View_MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92271DF5DBFB004C92C6 /* View_MainController.swift */; };
+		92EA92281DF5DBFB004C92C6 /* Controller_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */; };
 		9B8E56EA33938DFB1DA57C1E /* Pods_TheBigPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D30EC4DB3099C5CF488229 /* Pods_TheBigPicture.framework */; };
-		BD71BF581DF866AF003C0220 /* KCFABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF511DF866AF003C0220 /* KCFABManager.swift */; };
-		BD71BF591DF866AF003C0220 /* KCFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF521DF866AF003C0220 /* KCFABViewController.swift */; };
-		BD71BF5A1DF866AF003C0220 /* KCFABWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF531DF866AF003C0220 /* KCFABWindow.swift */; };
-		BD71BF5B1DF866AF003C0220 /* KCFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF551DF866AF003C0220 /* KCFloatingActionButton.swift */; };
-		BD71BF5C1DF866AF003C0220 /* KCFloatingActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF561DF866AF003C0220 /* KCFloatingActionButtonDelegate.swift */; };
-		BD71BF5D1DF866AF003C0220 /* KCFloatingActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF571DF866AF003C0220 /* KCFloatingActionButtonItem.swift */; };
 		BD71BF5F1DF8798C003C0220 /* Controller_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF5E1DF8798C003C0220 /* Controller_Detail.swift */; };
+		F311D0401DFD759000CF7EAA /* KCFABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311D0391DFD759000CF7EAA /* KCFABManager.swift */; };
+		F311D0411DFD759000CF7EAA /* KCFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311D03A1DFD759000CF7EAA /* KCFABViewController.swift */; };
+		F311D0421DFD759000CF7EAA /* KCFABWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311D03B1DFD759000CF7EAA /* KCFABWindow.swift */; };
+		F311D0431DFD759000CF7EAA /* KCFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311D03D1DFD759000CF7EAA /* KCFloatingActionButton.swift */; };
+		F311D0441DFD759000CF7EAA /* KCFloatingActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311D03E1DFD759000CF7EAA /* KCFloatingActionButtonDelegate.swift */; };
+		F311D0451DFD759000CF7EAA /* KCFloatingActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311D03F1DFD759000CF7EAA /* KCFloatingActionButtonItem.swift */; };
 		F37835261DC86A2600E974CE /* Model_Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835251DC86A2600E974CE /* Model_Node.swift */; };
 		F37835281DC86E2200E974CE /* Model_Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37835271DC86E2200E974CE /* Model_Component.swift */; };
 		F38924521DF8141A007EAC03 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F38924511DF8141A007EAC03 /* CellView.xib */; };
@@ -56,19 +57,20 @@
 		923EF9921DC8687500B22790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92558B3A1DEF09F700FA7CB3 /* Controller_MindMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_MindMap.swift; sourceTree = "<group>"; };
 		929223051DE41A39007A4BF4 /* View_CascadeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_CascadeNode.swift; sourceTree = "<group>"; };
+		929BF3F41DFD714C0021272A /* View_Component_Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_Component_Text.swift; sourceTree = "<group>"; };
 		92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_Calendar.swift; sourceTree = "<group>"; };
 		92EA92251DF54389004C92C6 /* View_MindMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MindMapNode.swift; sourceTree = "<group>"; };
-		92EA92271DF5DBFB004C92C6 /* View_MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MainController.swift; sourceTree = "<group>"; };
+		92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_Main.swift; sourceTree = "<group>"; };
 		A5E5DF02A3C64C6DAD40B22C /* Pods-TheBigPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBigPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture.release.xcconfig"; sourceTree = "<group>"; };
-		BD71BF511DF866AF003C0220 /* KCFABManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABManager.swift; path = ../../KCFloatingActionButton/Sources/KCFABManager.swift; sourceTree = "<group>"; };
-		BD71BF521DF866AF003C0220 /* KCFABViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABViewController.swift; path = ../../KCFloatingActionButton/Sources/KCFABViewController.swift; sourceTree = "<group>"; };
-		BD71BF531DF866AF003C0220 /* KCFABWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABWindow.swift; path = ../../KCFloatingActionButton/Sources/KCFABWindow.swift; sourceTree = "<group>"; };
-		BD71BF541DF866AF003C0220 /* KCFloatingActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KCFloatingActionButton.h; path = ../../KCFloatingActionButton/Sources/KCFloatingActionButton.h; sourceTree = "<group>"; };
-		BD71BF551DF866AF003C0220 /* KCFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButton.swift; path = ../../KCFloatingActionButton/Sources/KCFloatingActionButton.swift; sourceTree = "<group>"; };
-		BD71BF561DF866AF003C0220 /* KCFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButtonDelegate.swift; path = ../../KCFloatingActionButton/Sources/KCFloatingActionButtonDelegate.swift; sourceTree = "<group>"; };
-		BD71BF571DF866AF003C0220 /* KCFloatingActionButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButtonItem.swift; path = ../../KCFloatingActionButton/Sources/KCFloatingActionButtonItem.swift; sourceTree = "<group>"; };
 		BD71BF5E1DF8798C003C0220 /* Controller_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_Detail.swift; sourceTree = "<group>"; };
 		C655A363C1C37D7614FC8C59 /* Pods-TheBigPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBigPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture.debug.xcconfig"; sourceTree = "<group>"; };
+		F311D0391DFD759000CF7EAA /* KCFABManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABManager.swift; path = Pods/KCFloatingActionButton/Sources/KCFABManager.swift; sourceTree = SOURCE_ROOT; };
+		F311D03A1DFD759000CF7EAA /* KCFABViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABViewController.swift; path = Pods/KCFloatingActionButton/Sources/KCFABViewController.swift; sourceTree = SOURCE_ROOT; };
+		F311D03B1DFD759000CF7EAA /* KCFABWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABWindow.swift; path = Pods/KCFloatingActionButton/Sources/KCFABWindow.swift; sourceTree = SOURCE_ROOT; };
+		F311D03C1DFD759000CF7EAA /* KCFloatingActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KCFloatingActionButton.h; path = Pods/KCFloatingActionButton/Sources/KCFloatingActionButton.h; sourceTree = SOURCE_ROOT; };
+		F311D03D1DFD759000CF7EAA /* KCFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButton.swift; path = Pods/KCFloatingActionButton/Sources/KCFloatingActionButton.swift; sourceTree = SOURCE_ROOT; };
+		F311D03E1DFD759000CF7EAA /* KCFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButtonDelegate.swift; path = Pods/KCFloatingActionButton/Sources/KCFloatingActionButtonDelegate.swift; sourceTree = SOURCE_ROOT; };
+		F311D03F1DFD759000CF7EAA /* KCFloatingActionButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButtonItem.swift; path = Pods/KCFloatingActionButton/Sources/KCFloatingActionButtonItem.swift; sourceTree = SOURCE_ROOT; };
 		F37835251DC86A2600E974CE /* Model_Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Node.swift; sourceTree = "<group>"; };
 		F37835271DC86E2200E974CE /* Model_Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model_Component.swift; sourceTree = "<group>"; };
 		F38924511DF8141A007EAC03 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
@@ -128,13 +130,14 @@
 				92C838671DF814E700D0765A /* KCFloatingActionButton */,
 				F37835271DC86E2200E974CE /* Model_Component.swift */,
 				F37835251DC86A2600E974CE /* Model_Node.swift */,
+				92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */,
 				923EF97D1DC8687500B22790 /* Controller_Cascade.swift */,
 				92558B3A1DEF09F700FA7CB3 /* Controller_MindMap.swift */,
 				92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */,
 				BD71BF5E1DF8798C003C0220 /* Controller_Detail.swift */,
 				929223051DE41A39007A4BF4 /* View_CascadeNode.swift */,
 				92EA92251DF54389004C92C6 /* View_MindMapNode.swift */,
-				92EA92271DF5DBFB004C92C6 /* View_MainController.swift */,
+				929BF3F41DFD714C0021272A /* View_Component_Text.swift */,
 				923EF97B1DC8687500B22790 /* AppDelegate.swift */,
 				923EF97F1DC8687500B22790 /* Main.storyboard */,
 				923EF9821DC8687500B22790 /* Assets.xcassets */,
@@ -158,13 +161,13 @@
 		92C838671DF814E700D0765A /* KCFloatingActionButton */ = {
 			isa = PBXGroup;
 			children = (
-				BD71BF511DF866AF003C0220 /* KCFABManager.swift */,
-				BD71BF521DF866AF003C0220 /* KCFABViewController.swift */,
-				BD71BF531DF866AF003C0220 /* KCFABWindow.swift */,
-				BD71BF541DF866AF003C0220 /* KCFloatingActionButton.h */,
-				BD71BF551DF866AF003C0220 /* KCFloatingActionButton.swift */,
-				BD71BF561DF866AF003C0220 /* KCFloatingActionButtonDelegate.swift */,
-				BD71BF571DF866AF003C0220 /* KCFloatingActionButtonItem.swift */,
+				F311D0391DFD759000CF7EAA /* KCFABManager.swift */,
+				F311D03A1DFD759000CF7EAA /* KCFABViewController.swift */,
+				F311D03B1DFD759000CF7EAA /* KCFABWindow.swift */,
+				F311D03C1DFD759000CF7EAA /* KCFloatingActionButton.h */,
+				F311D03D1DFD759000CF7EAA /* KCFloatingActionButton.swift */,
+				F311D03E1DFD759000CF7EAA /* KCFloatingActionButtonDelegate.swift */,
+				F311D03F1DFD759000CF7EAA /* KCFloatingActionButtonItem.swift */,
 			);
 			name = KCFloatingActionButton;
 			sourceTree = "<group>";
@@ -335,22 +338,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37835261DC86A2600E974CE /* Model_Node.swift in Sources */,
-				BD71BF581DF866AF003C0220 /* KCFABManager.swift in Sources */,
-				BD71BF591DF866AF003C0220 /* KCFABViewController.swift in Sources */,
 				92558B3B1DEF09F700FA7CB3 /* Controller_MindMap.swift in Sources */,
 				BD71BF5F1DF8798C003C0220 /* Controller_Detail.swift in Sources */,
+				F311D0431DFD759000CF7EAA /* KCFloatingActionButton.swift in Sources */,
+				F311D0441DFD759000CF7EAA /* KCFloatingActionButtonDelegate.swift in Sources */,
+				F311D0421DFD759000CF7EAA /* KCFABWindow.swift in Sources */,
 				923EF97E1DC8687500B22790 /* Controller_Cascade.swift in Sources */,
-				BD71BF5A1DF866AF003C0220 /* KCFABWindow.swift in Sources */,
-				BD71BF5D1DF866AF003C0220 /* KCFloatingActionButtonItem.swift in Sources */,
 				923EF97C1DC8687500B22790 /* AppDelegate.swift in Sources */,
-				BD71BF5B1DF866AF003C0220 /* KCFloatingActionButton.swift in Sources */,
 				F37835281DC86E2200E974CE /* Model_Component.swift in Sources */,
 				92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */,
+				F311D0451DFD759000CF7EAA /* KCFloatingActionButtonItem.swift in Sources */,
 				F38924541DF81482007EAC03 /* CellView.swift in Sources */,
 				929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */,
-				92EA92281DF5DBFB004C92C6 /* View_MainController.swift in Sources */,
-				BD71BF5C1DF866AF003C0220 /* KCFloatingActionButtonDelegate.swift in Sources */,
+				92EA92281DF5DBFB004C92C6 /* Controller_Main.swift in Sources */,
 				92ACC91E1DF72E85008F902B /* Controller_Calendar.swift in Sources */,
+				F311D0401DFD759000CF7EAA /* KCFABManager.swift in Sources */,
+				F311D0411DFD759000CF7EAA /* KCFABViewController.swift in Sources */,
+				929BF3F51DFD714C0021272A /* View_Component_Text.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

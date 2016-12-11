@@ -48,17 +48,17 @@ class View_MindMapNode
         self.button.frame.origin.y = self.model.y
         self.button.setTitle(name, for: UIControlState.normal)
         
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         
         for child in model.children
         {
-            var start = CGPoint(x:self.model.x + 150, y:self.model.y+15)
-            var end = CGPoint(x:child.x, y:child.y+15)
+            let start = CGPoint(x:self.model.x + 150, y:self.model.y+15)
+            let end = CGPoint(x:child.x, y:child.y+15)
             
-            var distx = (end.x - start.x) / 2
+            let distx = (end.x - start.x) / 2
             
-            var ctrl1 = CGPoint(x:self.model.x + 150 + distx, y:self.model.y+15)
-            var ctrl2 = CGPoint(x:child.x-distx, y:child.y+15)
+            let ctrl1 = CGPoint(x:self.model.x + 150 + distx, y:self.model.y+15)
+            let ctrl2 = CGPoint(x:child.x-distx, y:child.y+15)
             
             path.move(to:start)
             path.addCurve(to:end, controlPoint1:ctrl1, controlPoint2:ctrl2)

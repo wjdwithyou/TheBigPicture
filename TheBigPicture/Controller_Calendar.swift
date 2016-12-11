@@ -34,6 +34,8 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         
         self.calendarView.frame.size.width = self.view.frame.width
         self.label_month.frame.size.width = self.view.frame.width
+        
+        self.setupViewsOfCalendar(from:self.calendarView.visibleDates())
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters
@@ -63,20 +65,37 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         {
             myCustomCell.dayLabel.textColor = UIColor.black
         }
+            /*
         else if cellState.dateBelongsTo ==
         {
             myCustomCell.dayLabel.textColor = UIColor.red
         }
+ */
         else
         {
             myCustomCell.dayLabel.textColor = UIColor.gray
         }
     }
     
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo)
+    {
+        self.setupViewsOfCalendar(from:visibleDates)
+    }
+    
     func setupViewsOfCalendar(from visibleDates: DateSegmentInfo)
     {
+        guard let startDate = visibleDates.monthDates.first else
+        {
+            return
+        }
+        
+        let month = Calendar.current.dateComponents([.month], from: startDate).month!
+        let monthName = DateFormatter().monthSymbols[(month-1) % 12]
+        let year = Calendar.current.component(.year, from: startDate)
+        
+        label_month.text = monthName + " " + String(year)
     }
-
+/*
     func scrollDidEndDecelerating(for calendar: JTAppleCalendarView)
     {
         guard let startDate = calendar.visibleDates().monthDates.first else
@@ -90,5 +109,6 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         
         label_month.text = monthName + " " + String(year)
     }
+ */
 }
 
