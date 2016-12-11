@@ -8,20 +8,22 @@
 
 import UIKit
 
-class Controller_Detail: UIViewController {
+class Controller_Detail: UIViewController
+{
     @IBOutlet weak var DetailTitle: UINavigationItem!
     
     var receivedText: String?
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         self.DetailTitle.title = receivedText
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        return .lightContent
     }
     
 
