@@ -15,9 +15,10 @@
 		923EF9911DC8687500B22790 /* TheBigPictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EF9901DC8687500B22790 /* TheBigPictureTests.swift */; };
 		92558B3B1DEF09F700FA7CB3 /* Controller_MindMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92558B3A1DEF09F700FA7CB3 /* Controller_MindMap.swift */; };
 		929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929223051DE41A39007A4BF4 /* View_CascadeNode.swift */; };
+		929BF3F51DFD714C0021272A /* View_Component_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BF3F41DFD714C0021272A /* View_Component_Text.swift */; };
 		92ACC91E1DF72E85008F902B /* Controller_Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */; };
 		92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92251DF54389004C92C6 /* View_MindMapNode.swift */; };
-		92EA92281DF5DBFB004C92C6 /* View_MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92271DF5DBFB004C92C6 /* View_MainController.swift */; };
+		92EA92281DF5DBFB004C92C6 /* Controller_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */; };
 		9B8E56EA33938DFB1DA57C1E /* Pods_TheBigPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D30EC4DB3099C5CF488229 /* Pods_TheBigPicture.framework */; };
 		BD71BF581DF866AF003C0220 /* KCFABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF511DF866AF003C0220 /* KCFABManager.swift */; };
 		BD71BF591DF866AF003C0220 /* KCFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71BF521DF866AF003C0220 /* KCFABViewController.swift */; };
@@ -56,9 +57,10 @@
 		923EF9921DC8687500B22790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92558B3A1DEF09F700FA7CB3 /* Controller_MindMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_MindMap.swift; sourceTree = "<group>"; };
 		929223051DE41A39007A4BF4 /* View_CascadeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_CascadeNode.swift; sourceTree = "<group>"; };
+		929BF3F41DFD714C0021272A /* View_Component_Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_Component_Text.swift; sourceTree = "<group>"; };
 		92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_Calendar.swift; sourceTree = "<group>"; };
 		92EA92251DF54389004C92C6 /* View_MindMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MindMapNode.swift; sourceTree = "<group>"; };
-		92EA92271DF5DBFB004C92C6 /* View_MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MainController.swift; sourceTree = "<group>"; };
+		92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_Main.swift; sourceTree = "<group>"; };
 		A5E5DF02A3C64C6DAD40B22C /* Pods-TheBigPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBigPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture.release.xcconfig"; sourceTree = "<group>"; };
 		BD71BF511DF866AF003C0220 /* KCFABManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABManager.swift; path = ../../KCFloatingActionButton/Sources/KCFABManager.swift; sourceTree = "<group>"; };
 		BD71BF521DF866AF003C0220 /* KCFABViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCFABViewController.swift; path = ../../KCFloatingActionButton/Sources/KCFABViewController.swift; sourceTree = "<group>"; };
@@ -128,13 +130,14 @@
 				92C838671DF814E700D0765A /* KCFloatingActionButton */,
 				F37835271DC86E2200E974CE /* Model_Component.swift */,
 				F37835251DC86A2600E974CE /* Model_Node.swift */,
+				92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */,
 				923EF97D1DC8687500B22790 /* Controller_Cascade.swift */,
 				92558B3A1DEF09F700FA7CB3 /* Controller_MindMap.swift */,
 				92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */,
 				BD71BF5E1DF8798C003C0220 /* Controller_Detail.swift */,
 				929223051DE41A39007A4BF4 /* View_CascadeNode.swift */,
 				92EA92251DF54389004C92C6 /* View_MindMapNode.swift */,
-				92EA92271DF5DBFB004C92C6 /* View_MainController.swift */,
+				929BF3F41DFD714C0021272A /* View_Component_Text.swift */,
 				923EF97B1DC8687500B22790 /* AppDelegate.swift */,
 				923EF97F1DC8687500B22790 /* Main.storyboard */,
 				923EF9821DC8687500B22790 /* Assets.xcassets */,
@@ -348,9 +351,10 @@
 				92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */,
 				F38924541DF81482007EAC03 /* CellView.swift in Sources */,
 				929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */,
-				92EA92281DF5DBFB004C92C6 /* View_MainController.swift in Sources */,
+				92EA92281DF5DBFB004C92C6 /* Controller_Main.swift in Sources */,
 				BD71BF5C1DF866AF003C0220 /* KCFloatingActionButtonDelegate.swift in Sources */,
 				92ACC91E1DF72E85008F902B /* Controller_Calendar.swift in Sources */,
+				929BF3F51DFD714C0021272A /* View_Component_Text.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
