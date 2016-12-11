@@ -40,6 +40,18 @@ class Model_Node
         children = children.filter() { $0 !== child }
     }
     
+    func get_all_children_id() -> Array<Int>
+    {
+        var children_id:Array<Int> = [id]
+        
+        for child in children
+        {
+            children_id += child.get_all_children_id()
+        }
+        
+        return children_id
+    }
+    
     func add_component(component:Model_Component) -> Void
     {
         components.append(component)

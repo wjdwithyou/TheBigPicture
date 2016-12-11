@@ -31,7 +31,7 @@ class View_CascadeNode
     
     func render()
     {
-        var name:String = ""
+        var name:String = " "
         
         for comp in model.components
         {

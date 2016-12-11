@@ -13,6 +13,7 @@ class View_MindMapNode
 {
     var model:Model_Node
     var button:UIButton
+    var shapeLayer:CAShapeLayer
     
     init(model:Model_Node)
     {
@@ -26,12 +27,14 @@ class View_MindMapNode
         
         self.button.backgroundColor = UIColor(red:91/255, green:118/255, blue:136/255, alpha: 1)
         
+        self.shapeLayer = CAShapeLayer()
+        
         self.render()
     }
     
     func render()
     {
-        var name:String = ""
+        var name:String = " "
         
         for comp in model.components
         {
@@ -44,5 +47,27 @@ class View_MindMapNode
         self.button.frame.origin.x = self.model.x
         self.button.frame.origin.y = self.model.y
         self.button.setTitle(name, for: UIControlState.normal)
+        
+        var path = UIBezierPath()
+        
+        for child in model.children
+        {
+            var start = CGPoint(x:self.model.x + 150, y:self.model.y+15)
+            var end = CGPoint(x:child.x, y:child.y+15)
+            
+            var distx = (end.x - start.x) / 2
+            
+            var ctrl1 = CGPoint(x:self.model.x + 150 + distx, y:self.model.y+15)
+            var ctrl2 = CGPoint(x:child.x-distx, y:child.y+15)
+            
+            path.move(to:start)
+            path.addCurve(to:end, controlPoint1:ctrl1, controlPoint2:ctrl2)
+            path.addCurve(to:start, controlPoint1:ctrl2, controlPoint2:ctrl1)
+        }
+        
+        //design path in layer
+        self.shapeLayer.path = path.cgPath
+        self.shapeLayer.strokeColor = UIColor(red:55/255, green:73/255, blue:94/255, alpha: 1).cgColor
+        self.shapeLayer.lineWidth = 2.0
     }
 }
