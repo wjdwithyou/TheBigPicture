@@ -59,6 +59,12 @@ class Model_Node
     
     func remove_component(component:Model_Component) -> Void
     {
+        
+    }
+    
+    func clear_component() -> Void
+    {
+        components.removeAll()
     }
 }
 
@@ -150,6 +156,10 @@ var test_components_name = [
     Model_Component_Name(id:13, node_id:7, name:"테스트")
 ]
 
+var test_components_text = [
+    Model_Component_Text(id: 401, node_id: 4, text: "융소프 내용..."),
+    Model_Component_Text(id: 402, node_id: 4, text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+]
 
 func initialize_test_data()
 {
@@ -167,6 +177,11 @@ func initialize_test_data()
     }
     
     for comp in test_components_name
+    {
+        s_node_container.get_node(node_id: comp.node_id).add_component(component: comp)
+    }
+    
+    for comp in test_components_text
     {
         s_node_container.get_node(node_id: comp.node_id).add_component(component: comp)
     }

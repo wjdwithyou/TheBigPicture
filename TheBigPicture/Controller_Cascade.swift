@@ -202,7 +202,7 @@ class Controller_Cascade: UIViewController
             
             let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! Controller_Detail
             
-            vc.receivedText = String(describing: sender.titleLabel!.text!)
+            vc.receivedNode = view_node
             
             self.present(vc, animated: true, completion: nil)
         }
