@@ -122,7 +122,7 @@ class Model_NodeContainer
 }
 
 var s_node_container = Model_NodeContainer()
-var s_node_index = 10000
+var s_generic_index = 10000
 
 var test_nodes = [
     Model_Node(id:1,    parent_id:-1),

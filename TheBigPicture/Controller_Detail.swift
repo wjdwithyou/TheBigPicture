@@ -12,45 +12,29 @@ class Controller_Detail: UIViewController
 {
     @IBOutlet weak var DetailTitle: UINavigationItem!
     
-    let textViewWidth: CGFloat = 350
-    let textViewHeight: CGFloat = 50    // default
-    let textViewInterval: CGFloat = 25
-    let textViewOriginX: CGFloat = 25
-    let textViewOriginY: CGFloat = 85
+    var model: Model_Node!
     
-    var receivedModel: Model_Node?
+    var map_view:[View_Component]
     
-    override func viewDidLoad()
+    required init?(coder aDecoder: NSCoder)
     {
-        super.viewDidLoad()
+        self.map_view = []
         
-        let viewTapGestureRec = UITapGestureRecognizer(target: self, action: #selector(self.handleViewTap(recognizer:)))
-        viewTapGestureRec.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(viewTapGestureRec)
-
-        self.render()
+        super.init(coder: aDecoder)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle
     {
         return .lightContent
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    func render()
+    override func viewDidLoad()
     {
-        var textViewY: CGFloat = self.textViewOriginY
+        super.viewDidLoad()
         
-        for comp in (receivedModel?.components)!
+        self.map_view = []
+        
+        for comp in model.components
         {
             if let comp_name = comp as? Model_Component_Name
             {
@@ -59,70 +43,56 @@ class Controller_Detail: UIViewController
             
             if let comp_text = comp as? Model_Component_Text
             {
-                let textView = UITextView()
-                
-                textView.frame.size.width = self.textViewWidth
-                textView.frame.size.height = self.textViewHeight
-                textView.layer.cornerRadius = 10
-                
-                textView.frame.origin.x = self.textViewOriginX
-                textView.frame.origin.y = textViewY
-                
-                textView.backgroundColor = UIColor.white
-                textView.text = comp_text.text
-                
-                resizeTextView(sub: textView)
-                
-                textViewY += (textView.frame.size.height + self.textViewInterval)
-                
-                self.view.addSubview(textView)
-            }
-        }
-    }
-    
-    func resizeTextView(sub: UITextView){
-        let contentSize = sub.sizeThatFits(sub.bounds.size)
-        var frame = sub.frame
-        frame.size.height = contentSize.height
-        sub.frame = frame
-    }
-    
-    func resizeTextView_After(){
-        var textViewY: CGFloat = self.textViewOriginY
-        
-        for sub in self.view.subviews{
-            if let subTextView = sub as? UITextView{
-                var frame = sub.frame
-                frame.origin.y = textViewY
-                sub.frame = frame
-                
-                textViewY += frame.size.height + self.textViewInterval
-            }
-        }
-    }
-    
-    func handleViewTap(recognizer: UIGestureRecognizer) {
-        var cnt = 0
-        let index: Int = receivedModel!.id
-        let first: Model_Component = (receivedModel!.components.first)!
-        
-        s_node_container.map_node[index]?.clear_component()
-        s_node_container.map_node[index]?.add_component(component: first)
-        
-        for sub in self.view.subviews{
-            if let subTextView = sub as? UITextView{
-                cnt += 1
-                
-                let t_id: Int = index * 100 + cnt
-                let comp: Model_Component = Model_Component_Text(id: t_id, node_id: index, text: subTextView.text)
-                
-                s_node_container.map_node[index]?.add_component(component: comp)
-                
-                resizeTextView(sub: subTextView)
-                subTextView.resignFirstResponder()
+                self.add_view_comp_text(model:comp_text)
             }
         }
         
-        resizeTextView_After()
+        let fab = KCFloatingActionButton()
+        fab.plusColor = UIColor(red: 30/255.0, green: 45/255.0, blue: 66/255.0, alpha: 1)
+        fab.buttonColor = UIColor(white: 0.9, alpha: 1)
+        fab.addItem(title: "Date", handler:
+        {
+            item in
+            
+            self.render()
+        })
+        fab.addItem(title: "Text", handler:
+        {
+            item in
+            var model_comp_text = Model_Component_Text(id:s_generic_index, node_id:self.model.id, text:"")
+            self.model.add_component(component: model_comp_text)
+            self.add_view_comp_text(model:model_comp_text)
+            
+            s_generic_index = s_generic_index + 1
+            
+            self.render()
+        })
+        self.view.addSubview(fab)
+
+        self.render()
     }
+    
+    func add_view_comp_text(model:Model_Component_Text)
+    {
+        var new_view_comp_text = View_Component_Text(model:model, ctrl_detail:self)
+        
+        self.map_view.append(new_view_comp_text)
+        
+        self.view.addSubview(new_view_comp_text.text_view)
+    }
+    
+    func render()
+    {
+        var current_y:CGFloat = 80
+        
+        for view_comp in self.map_view
+        {
+            view_comp.y = current_y
+            view_comp.render()
+            
+            current_y += view_comp.getContentSize() + 10
+        }
+    }
+    
+
 }
