@@ -82,22 +82,14 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState)
     {
+        
         let myCustomCell = cell as! CellView
         myCustomCell.dayLabel.text = cellState.text
         
-        if cellState.dateBelongsTo == .thisMonth
-        {
-            myCustomCell.dayLabel.textColor = UIColor.black
-            
-//            if date == 
-//                {
-//                    myCustomCell.dayLabel.textColor = UIColor.red
-//            }
+        if Calendar.current.isDateInToday(date) {
+            myCustomCell.dayLabel.backgroundColor = UIColor.red
         }
-        else
-        {
-            myCustomCell.dayLabel.textColor = UIColor.gray
-        }
+        handleCellTextColor(view: cell, cellState: cellState)
     }
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellTextColor(view: cell, cellState: cellState)
