@@ -143,7 +143,7 @@ class Controller_Cascade: UIViewController
     func arrange_cascade(pos:CGPoint, node:Model_Node) -> CGFloat
     {
         let stride_x:CGFloat = 50
-        let node_height:CGFloat = 40
+        let node_height:CGFloat = 30
         var child_y:CGFloat = node_height + 10
         
         for child in node.children

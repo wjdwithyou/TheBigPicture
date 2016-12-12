@@ -137,7 +137,7 @@ class Controller_MindMap: UIViewController
     
     func arrange_spread(pos:CGPoint, node:Model_Node) -> CGFloat
     {
-        let stride_x:CGFloat = 150 + 30
+        let stride_x:CGFloat = 200 + 30
         let node_height:CGFloat = 30
         var child_y:CGFloat = node.children.count > 0 ? 0 : node_height + 20
         

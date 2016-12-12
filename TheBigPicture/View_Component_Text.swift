@@ -25,7 +25,6 @@ class View_Component : NSObject
 
 class View_Component_Text : View_Component, UITextViewDelegate
 {
-    /*
     var model:Model_Component_Text
     
     var text_view:UITextView
@@ -86,5 +85,4 @@ class View_Component_Text : View_Component, UITextViewDelegate
         self.ctrl_detail.render()
         self.model.text = textView.text
     }
-    */
 }

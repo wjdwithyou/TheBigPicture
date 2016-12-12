@@ -21,7 +21,7 @@ class View_MindMapNode
         
         self.button = UIButton()
         
-        self.button.frame.size.width = 150
+        self.button.frame.size.width = 200
         self.button.frame.size.height = 30
         self.button.layer.cornerRadius = 20/3
         
@@ -52,12 +52,12 @@ class View_MindMapNode
         
         for child in model.children
         {
-            let start = CGPoint(x:self.model.x + 150, y:self.model.y+15)
+            let start = CGPoint(x:self.model.x + 200, y:self.model.y+15)
             let end = CGPoint(x:child.x, y:child.y+15)
             
             let distx = (end.x - start.x) / 2
             
-            let ctrl1 = CGPoint(x:self.model.x + 150 + distx, y:self.model.y+15)
+            let ctrl1 = CGPoint(x:self.model.x + 200 + distx, y:self.model.y+15)
             let ctrl2 = CGPoint(x:child.x-distx, y:child.y+15)
             
             path.move(to:start)
