@@ -161,6 +161,10 @@ var test_components_text = [
     Model_Component_Text(id: 402, node_id: 4, text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 ]
 
+var test_components_date = [
+    Model_Component_Date(id: 411, node_id: 41, date: NSDate.init())
+]
+
 func initialize_test_data()
 {
     for node in test_nodes
@@ -182,6 +186,11 @@ func initialize_test_data()
     }
     
     for comp in test_components_text
+    {
+        s_node_container.get_node(node_id: comp.node_id).add_component(component: comp)
+    }
+    
+    for comp in test_components_date
     {
         s_node_container.get_node(node_id: comp.node_id).add_component(component: comp)
     }
