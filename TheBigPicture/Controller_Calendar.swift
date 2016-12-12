@@ -9,10 +9,12 @@
 import UIKit
 import JTAppleCalendar
 
-class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate
+class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate,UITableViewDataSource,UITableViewDelegate
 {
     @IBOutlet var calendarView: JTAppleCalendarView!
     @IBOutlet weak var label_month: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     let formatter = DateFormatter()
     
     required init?(coder aDecoder: NSCoder)
@@ -60,6 +62,10 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         self.label_month.frame.size.width = self.view.frame.width
         
         self.setupViewsOfCalendar(from:self.calendarView.visibleDates())
+        
+        self.tableView.frame.size.width = self.view.frame.width
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters
@@ -67,8 +73,8 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        let startDate = formatter.date(from: "2016 02 01")! // You can use date generated from a formatter
-        let endDate = Date()                                // You can also use dates created from this function
+        let startDate = formatter.date(from: "2016 12 01")! // You can use date generated from a formatter
+        let endDate = formatter.date(from: "2026 10 01")!                               // You can also use dates created from this function
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
@@ -132,5 +138,22 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         label_month.text = monthName + " " + String(year)
     }
  */
+    
+    let menus = ["swift","tableview","example"]
+    // table row 갯수 (menu 배열의 갯수만큼)
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menus.count
+    }
+    
+    // 각 row 마다 데이터 세팅.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 첫 번째 인자로 등록한 identifier, cell은 as 키워드로 앞서 만든 custom cell class화 해준다.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath as IndexPath) as! CustomCell
+        
+        // 위 작업을 마치면 커스텀 클래스의 outlet을 사용할 수 있다.
+        cell.taskLabel.text = menus[indexPath.row]
+        
+        return cell
+    }
 }
-
