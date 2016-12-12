@@ -13,11 +13,13 @@ class Controller_Detail: UIViewController
     @IBOutlet weak var DetailTitle: UINavigationItem!
     
     var model: Model_Node!
-    var map_view:[View_Component]
+    var map_view: [View_Component]
+    var map_view_comp_by_date_picker: [UIDatePicker: View_Component]
     
     required init?(coder aDecoder: NSCoder)
     {
         self.map_view = []
+        self.map_view_comp_by_date_picker = [:]
         
         super.init(coder: aDecoder)
     }
@@ -64,20 +66,20 @@ class Controller_Detail: UIViewController
                 s_generic_index += 1
                 
                 self.render()
-        })
+            })
         fab.addItem(title: "Date", handler:
-        {
-            item in
-            let model_comp_date = Model_Component_Date(id: s_generic_index, node_id: self.model.id, date: NSDate.init(timeIntervalSinceNow: 9*60*60))
-            self.model.add_component(component: model_comp_date)
-            self.add_view_comp_date(model: model_comp_date)
+            {
+                item in
+                let model_comp_date = Model_Component_Date(id: s_generic_index, node_id: self.model.id, date_str: "2016-12-13 00:00:00")
+                self.model.add_component(component: model_comp_date)
+                self.add_view_comp_date(model: model_comp_date)
             
-            s_generic_index += 1
+                s_generic_index += 1
             
-            self.render()
-        })
+                self.render()
+            })
+        
         self.view.addSubview(fab)
-
         self.render()
     }
     
@@ -93,22 +95,32 @@ class Controller_Detail: UIViewController
     {
         let new_view_comp_date = View_Component_Date(model: model, ctrl_detail: self)
         
+        new_view_comp_date.date_picker.addTarget(self, action: #selector(self.datePickerChanged(sender:)), for: .valueChanged)
+        
+        self.map_view_comp_by_date_picker[new_view_comp_date.date_picker] = new_view_comp_date
         self.map_view.append(new_view_comp_date)
-        self.view.addSubview(new_view_comp_date.text_view)
+        self.view.addSubview(new_view_comp_date.date_picker)
     }
     
     func render()
     {
-        var current_y:CGFloat = 80
+        let commonComponentInterval: CGFloat = 10
+        var current_y: CGFloat = 80
         
         for view_comp in self.map_view
         {
             view_comp.y = current_y
             view_comp.render()
             
-            current_y += view_comp.getContentSize() + 10
+            current_y += view_comp.getContentSize() + commonComponentInterval
         }
     }
     
-
+    func datePickerChanged(sender: UIDatePicker)
+    {
+        let view_comp_date = self.map_view_comp_by_date_picker[sender] as! View_Component_Date
+        
+        let strDate = view_comp_date.dateform.string(from: view_comp_date.date_picker.date)
+        view_comp_date.model.date = strDate
+    }
 }

@@ -56,11 +56,11 @@ class Model_Component_Text : Model_Component
 
 class Model_Component_Date : Model_Component
 {
-    var date: NSDate
+    var date: String
     
-    init(id: Int, node_id: Int, date: NSDate)
+    init(id: Int, node_id: Int, date_str: String)
     {
-        self.date = date
+        self.date = date_str
         
         super.init(id:id, node_id:node_id, type:COMP_TYPE.DATE)
     }

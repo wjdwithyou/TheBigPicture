@@ -162,7 +162,7 @@ var test_components_text = [
 ]
 
 var test_components_date = [
-    Model_Component_Date(id: 411, node_id: 41, date: NSDate.init())
+    Model_Component_Date(id: 411, node_id: 41, date_str: "2015-01-27 10:30:00")
 ]
 
 func initialize_test_data()
