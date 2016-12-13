@@ -151,20 +151,20 @@ var test_components_name = [
     Model_Component_Name(id:8, node_id:4, name:"융합소프트웨어프로젝트"),
     Model_Component_Name(id:9, node_id:41, name:"과제"),
     Model_Component_Name(id:10, node_id:42, name:"동영상촬영"),
-    Model_Component_Name(id:11, node_id:5, name:"테스트"),
-    Model_Component_Name(id:12, node_id:6, name:"테스트"),
-    Model_Component_Name(id:13, node_id:7, name:"테스트")
+    Model_Component_Name(id:11, node_id:5, name:"신호와시스템"),
+    Model_Component_Name(id:12, node_id:6, name:"자료구조"),
+    Model_Component_Name(id:13, node_id:7, name:"분산컴퓨팅")
 ]
 
 var test_components_text = [
-    Model_Component_Text(id: 401, node_id: 4, text: "융소프 내용..."),
-    Model_Component_Text(id: 402, node_id: 4, text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+    Model_Component_Text(id: 401, node_id: 4, text: "융합소프트웨어 프로젝트 개요"),
+    Model_Component_Text(id: 402, node_id: 4, text: "융합소프트웨어 프로젝트 개요 설명입니다.\n융합소프트웨어 프로젝트 개요 설명입니다.\n융합소프트웨어 프로젝트 개요 설명입니다.\n융합소프트웨어 프로젝트 개요 설명입니다.\n융합소프트웨어 프로젝트 개요 설명입니다.\n융합소프트웨어 프로젝트 개요 설명입니다.")
 ]
 
 var test_components_date = [
-    Model_Component_Date(id: 411, node_id: 41, date_str: "2016-12-27 10:30:00"),
-    Model_Component_Date(id: 412, node_id: 4, date_str: "2016-12-27 10:30:00"),
-    Model_Component_Date(id: 413, node_id: 42, date_str: "2016-12-27 10:30:00"),
+    Model_Component_Date(id: 411, node_id: 41, date_str: "2016-12-13 10:30:00"),
+    Model_Component_Date(id: 412, node_id: 4, date_str: "2016-12-13 10:30:00"),
+    Model_Component_Date(id: 413, node_id: 42, date_str: "2016-12-13 10:30:00"),
 ]
 
 func initialize_test_data()
