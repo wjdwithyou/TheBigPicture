@@ -17,6 +17,7 @@
 		929223061DE41A39007A4BF4 /* View_CascadeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929223051DE41A39007A4BF4 /* View_CascadeNode.swift */; };
 		929BF3F51DFD714C0021272A /* View_Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BF3F41DFD714C0021272A /* View_Component.swift */; };
 		92ACC91E1DF72E85008F902B /* Controller_Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */; };
+		92C313351DFF92BA00B3B14F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C313341DFF92BA00B3B14F /* CustomCell.swift */; };
 		92EA92261DF54389004C92C6 /* View_MindMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92251DF54389004C92C6 /* View_MindMapNode.swift */; };
 		92EA92281DF5DBFB004C92C6 /* Controller_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */; };
 		9B8E56EA33938DFB1DA57C1E /* Pods_TheBigPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D30EC4DB3099C5CF488229 /* Pods_TheBigPicture.framework */; };
@@ -59,6 +60,7 @@
 		929223051DE41A39007A4BF4 /* View_CascadeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_CascadeNode.swift; sourceTree = "<group>"; };
 		929BF3F41DFD714C0021272A /* View_Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_Component.swift; sourceTree = "<group>"; };
 		92ACC91D1DF72E85008F902B /* Controller_Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_Calendar.swift; sourceTree = "<group>"; };
+		92C313341DFF92BA00B3B14F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		92EA92251DF54389004C92C6 /* View_MindMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MindMapNode.swift; sourceTree = "<group>"; };
 		92EA92271DF5DBFB004C92C6 /* Controller_Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller_Main.swift; sourceTree = "<group>"; };
 		A5E5DF02A3C64C6DAD40B22C /* Pods-TheBigPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBigPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheBigPicture/Pods-TheBigPicture.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				923EF9821DC8687500B22790 /* Assets.xcassets */,
 				923EF9841DC8687500B22790 /* LaunchScreen.storyboard */,
 				923EF9871DC8687500B22790 /* Info.plist */,
+				92C313341DFF92BA00B3B14F /* CustomCell.swift */,
 				F38924511DF8141A007EAC03 /* CellView.xib */,
 				F38924531DF81482007EAC03 /* CellView.swift */,
 			);
@@ -345,6 +348,7 @@
 				923EF97E1DC8687500B22790 /* Controller_Cascade.swift in Sources */,
 				BDC55B8C1DFD765200C1357C /* KCFloatingActionButtonDelegate.swift in Sources */,
 				923EF97C1DC8687500B22790 /* AppDelegate.swift in Sources */,
+				92C313351DFF92BA00B3B14F /* CustomCell.swift in Sources */,
 				F37835281DC86E2200E974CE /* Model_Component.swift in Sources */,
 				BDC55B8B1DFD765200C1357C /* KCFloatingActionButton.swift in Sources */,
 				BDC55B8D1DFD765200C1357C /* KCFloatingActionButtonItem.swift in Sources */,
