@@ -8,6 +8,7 @@
 
 import UIKit
 import JTAppleCalendar
+import Foundation
 
 class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate,UITableViewDataSource,UITableViewDelegate
 {
@@ -19,8 +20,12 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
     
     var dummy: [String]?
     
+    var map_model_node_by_date:[Date:Array<Model_Node>]
+    
     required init?(coder aDecoder: NSCoder)
     {
+        self.map_model_node_by_date = [:]
+        
         super.init(coder: aDecoder)
     }
     
@@ -80,6 +85,41 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         self.tableView.frame.size.width = self.view.frame.width
         tableView.dataSource = self
         tableView.delegate = self
+        
+        for node in s_node_container.map_node
+        {
+            for comp in node.value.components
+            {
+                if let comp_date = comp as? Model_Component_Date
+                {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy MM dd"
+                    
+                    let fullNameArr = comp_date.date.components(separatedBy: " ")
+                    
+                    let result1   = fullNameArr[0]
+                    
+                    let split2 = result1.components(separatedBy: "-")
+                    
+                    let dateStr = split2[0] + " " + split2[1] + " " + split2[2]
+                    
+                    print(dateStr)
+                    
+                    let date = formatter.date(from:dateStr)!
+                    
+                    if(map_model_node_by_date[date] == nil)
+                    {
+                        //self.map_model_node_by_date.updateValue( [node.value], forKey: date!)
+                        
+                        self.map_model_node_by_date[date] = [node.value]
+                    }
+                    else
+                    {
+                        self.map_model_node_by_date[date]!.append(node.value)
+                    }
+                }
+            }
+        }
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters
@@ -123,6 +163,25 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         
         print(formatter.string(from: date))
         print(date)
+        
+        var taskDummy = map_model_node_by_date[date]
+        print("fefefe")
+        print(taskDummy)
+        
+//        if(taskDummy != nil)
+//        {
+//            for a in taskDummy!
+//            {
+//                for comp in a
+//                {
+//                    if let comp_name = comp as? Model_Component_Name
+//                    {
+//                        dummy = comp_name.name
+//                    }
+//                }
+//            }
+//        }
+        
         dummy = self.taskDummyData(date: date)
         print(dummy)
         tableView.reloadData()
