@@ -17,6 +17,8 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
     
     let formatter = DateFormatter()
     
+    var dummy: [String]?
+    
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
@@ -36,14 +38,26 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         
         if cellState.isSelected {
             myCustomCell.dayLabel.backgroundColor = UIColor(red:91/255, green:118/255, blue:136/255, alpha: 1)
-            myCustomCell.dayLabel.textColor = UIColor.white
+            if(myCustomCell.dayLabel.textColor != UIColor.red )
+            {
+                myCustomCell.dayLabel.textColor = UIColor.white
+            }
         } else {
+            myCustomCell.dayLabel.backgroundColor = UIColor.white
             if cellState.dateBelongsTo == .thisMonth {
-                myCustomCell.dayLabel.backgroundColor = UIColor.white
-                myCustomCell.dayLabel.textColor = UIColor.black
+                
+                if(myCustomCell.dayLabel.textColor != UIColor.red )
+                {
+                    myCustomCell.dayLabel.textColor = UIColor.black
+                }
+                
             } else {
-                myCustomCell.dayLabel.backgroundColor = UIColor.white
-                myCustomCell.dayLabel.textColor = UIColor.gray
+                
+                if(myCustomCell.dayLabel.textColor != UIColor.red )
+                {
+                    myCustomCell.dayLabel.textColor = UIColor.gray
+                }
+
             }
         }
     }
@@ -93,9 +107,13 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         myCustomCell.dayLabel.text = cellState.text
         
         if Calendar.current.isDateInToday(date) {
-            myCustomCell.dayLabel.backgroundColor = UIColor.red
+            print(date)
+            myCustomCell.dayLabel.textColor = UIColor.red
         }
-        handleCellTextColor(view: cell, cellState: cellState)
+        else{
+            handleCellTextColor(view: cell, cellState: cellState)
+        }
+       
     }
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellTextColor(view: cell, cellState: cellState)
@@ -104,6 +122,10 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         handleCellTextColor(view: cell, cellState: cellState)
         
         print(formatter.string(from: date))
+        print(date)
+        dummy = self.taskDummyData(date: date)
+        print(dummy)
+        tableView.reloadData()
     }
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo)
     {
@@ -139,21 +161,58 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
     }
  */
     
-    let menus = ["swift","tableview","example"]
+    
+    
+    func taskDummyData(date:Date)->[String]
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+
+        
+        let task = [ formatter.date(from: "2016 12 09")! : ["swift","tableview","example"],
+                     formatter.date(from: "2016 12 10")! : ["swift","tableview","example"],
+                     formatter.date(from: "2016 12 11")! : ["swift","tableview","example"],
+                     formatter.date(from: "2016 12 13")! : ["융합소프트웨어 발표","DDP_RENTAL",""],
+        
+        ]
+        print(formatter.date(from: "2016 12 09"))
+        print(task[formatter.date(from: "2016 12 09")!])
+        if(task[date] == nil)
+        {
+            return []
+        }
+        return task[date]!
+    }
+    
     // table row 갯수 (menu 배열의 갯수만큼)
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menus.count
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        
+        print (dummy)
+        if dummy == nil
+        {
+            return 0
+        }
+        return (dummy?.count)!
     }
     
     // 각 row 마다 데이터 세팅.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
         // 첫 번째 인자로 등록한 identifier, cell은 as 키워드로 앞서 만든 custom cell class화 해준다.
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath as IndexPath) as! CustomCell
         
         // 위 작업을 마치면 커스텀 클래스의 outlet을 사용할 수 있다.
-        cell.taskLabel.text = menus[indexPath.row]
+        
+        cell.taskLabel.text = dummy?[indexPath.row]
+        
+        print(dummy)
         
         return cell
     }
+    
+    
 }
