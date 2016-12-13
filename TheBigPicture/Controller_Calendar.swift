@@ -8,6 +8,7 @@
 
 import UIKit
 import JTAppleCalendar
+import Foundation
 
 class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate,UITableViewDataSource,UITableViewDelegate
 {
@@ -19,8 +20,15 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
     
     var dummy: [String]?
     
+    var map_model_node_by_date:[Date:Array<Model_Node>]
+    
+    var current_date:Date
+    
     required init?(coder aDecoder: NSCoder)
     {
+        self.map_model_node_by_date = [:]
+        self.current_date = Date()
+        
         super.init(coder: aDecoder)
     }
     
@@ -80,6 +88,47 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         self.tableView.frame.size.width = self.view.frame.width
         tableView.dataSource = self
         tableView.delegate = self
+        
+        for node in s_node_container.map_node
+        {
+            for comp in node.value.components
+            {
+                if let comp_date = comp as? Model_Component_Date
+                {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy MM dd"
+                    
+                    let fullNameArr = comp_date.date.components(separatedBy: " ")
+                    
+                    let result1   = fullNameArr[0]
+                    
+                    let split2 = result1.components(separatedBy: "-")
+                    
+                    let dateStr = split2[0] + " " + split2[1] + " " + split2[2]
+                    
+                    print(dateStr)
+                    
+                    let date = formatter.date(from:dateStr)!
+                    
+                    
+                    if(map_model_node_by_date[date] == nil)
+                    {
+                        //self.map_model_node_by_date.updateValue( [node.value], forKey: date!)
+                        
+                        self.map_model_node_by_date[date] = [node.value]
+                        print("23132")
+                        print(self.map_model_node_by_date[date])
+                    }
+                    else
+                    {
+                        self.map_model_node_by_date[date]!.append(node.value)
+                        
+                        print("23132")
+                        print(self.map_model_node_by_date[date])
+                    }
+                }
+            }
+        }
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters
@@ -102,29 +151,57 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState)
     {
-        
         let myCustomCell = cell as! CellView
         myCustomCell.dayLabel.text = cellState.text
         
         if Calendar.current.isDateInToday(date) {
             print(date)
             myCustomCell.dayLabel.textColor = UIColor.red
+            print("red")
         }
-        else{
-            handleCellTextColor(view: cell, cellState: cellState)
-        }
+        handleCellTextColor(view: cell, cellState: cellState)
        
     }
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellTextColor(view: cell, cellState: cellState)
     }
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        
+        let fullNameArr = formatter.string(from:date).components(separatedBy: " ")
+        
+        let dateStr = fullNameArr[0] + " " + fullNameArr[1] + " " + fullNameArr[2]
+        
+        print(dateStr)
+        
+        let date = formatter.date(from:dateStr)!
+        
+        self.current_date = date
+        
         handleCellTextColor(view: cell, cellState: cellState)
         
         print(formatter.string(from: date))
         print(date)
-        dummy = self.taskDummyData(date: date)
-        print(dummy)
+        
+        var taskDummy = map_model_node_by_date[date]
+        print("fefefe")
+        print(taskDummy)
+        
+//        if(taskDummy != nil)
+//        {
+//            for a in taskDummy!
+//            {
+//                for comp in a
+//                {
+//                    if let comp_name = comp as? Model_Component_Name
+//                    {
+//                        dummy = comp_name.name
+//                    }
+//                }
+//            }
+//        }
+        
         tableView.reloadData()
     }
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo)
@@ -162,40 +239,10 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
  */
     
     
-    
-    func taskDummyData(date:Date)->[String]
-    {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-
-        
-        let task = [ formatter.date(from: "2016 12 09")! : ["swift","tableview","example"],
-                     formatter.date(from: "2016 12 10")! : ["swift","tableview","example"],
-                     formatter.date(from: "2016 12 11")! : ["swift","tableview","example"],
-                     formatter.date(from: "2016 12 13")! : ["융합소프트웨어 발표","DDP_RENTAL",""],
-        
-        ]
-        print(formatter.date(from: "2016 12 09"))
-        print(task[formatter.date(from: "2016 12 09")!])
-        if(task[date] == nil)
-        {
-            return []
-        }
-        return task[date]!
-    }
-    
     // table row 갯수 (menu 배열의 갯수만큼)
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        
-        print (dummy)
-        if dummy == nil
-        {
-            return 0
-        }
-        return (dummy?.count)!
+        return 5
     }
     
     // 각 row 마다 데이터 세팅.
@@ -205,11 +252,35 @@ class Controller_Calendar: UIViewController,JTAppleCalendarViewDataSource, JTApp
         // 첫 번째 인자로 등록한 identifier, cell은 as 키워드로 앞서 만든 custom cell class화 해준다.
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath as IndexPath) as! CustomCell
         
-        // 위 작업을 마치면 커스텀 클래스의 outlet을 사용할 수 있다.
+        var arr_model = self.map_model_node_by_date[current_date]
         
-        cell.taskLabel.text = dummy?[indexPath.row]
-        
-        print(dummy)
+        if arr_model != nil
+        {
+            if indexPath.row < arr_model!.count
+            {
+                var model = arr_model![indexPath.row]
+                
+                var name:String = " "
+                
+                for comp in model.components
+                {
+                    if let comp_name = comp as? Model_Component_Name
+                    {
+                        name = comp_name.name
+                    }
+                }
+                
+                cell.taskLabel.text = name
+            }
+            else
+            {
+                cell.taskLabel.text = ""
+            }
+        }
+        else
+        {
+            cell.taskLabel.text = ""
+        }
         
         return cell
     }
